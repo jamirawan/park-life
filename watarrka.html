@@ -33,7 +33,7 @@ body {
   padding:20px 16px 40px; overflow-x:hidden;
 }
 .card {
-  width:100%; max-width:460px; border-radius:2px; overflow:hidden;
+  width:100%; max: width 500px;px; border-radius:2px; overflow:hidden;
   box-shadow:0 8px 60px rgba(0,0,0,0.65), 0 2px 0 var(--park-accent);
   animation:lift 0.6s cubic-bezier(0.22,1,0.36,1) both; position:relative;
 }
@@ -42,8 +42,7 @@ body {
 /* Hero — canyon amber/burnt orange */
 .hero {
   background: var(--park-accent);
-  background-image: linear-gradient(155deg, #601800 0%, var(--park-accent) 40%, var(--park-mid) 75%, #E8920A 100%);
-  position:relative; overflow:hidden; padding:0;
+
 }
 /* Subtle horizontal strata lines evoking sandstone layers */
 .hero::before {
@@ -137,7 +136,7 @@ body {
 
 .terms-section { padding:0 20px 14px; margin-top:6px; }
 .terms-label { font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#999;margin-bottom:7px; }
-.terms-box { background:white; border:1px solid rgba(0,0,0,0.09); border-radius:2px; height:160px; overflow-y:auto; padding:14px 16px; margin-bottom:8px; scroll-behavior:smooth; }
+.terms-box { background:white; border:1px solid rgba(0,0,0,0.09); border-radius:2px; height:60vw; overflow-y:auto; padding:14px 16px; margin-bottom:8px; scroll-behavior:smooth; }
 .terms-box::-webkit-scrollbar { width:3px; }
 .terms-box::-webkit-scrollbar-thumb { background:#D4C4A8; border-radius:3px; }
 .terms-box h4 { font-family:'Barlow Condensed',sans-serif; font-size:12.5px; font-weight:700; color:var(--dusk); text-transform:uppercase; letter-spacing:0.05em; margin:12px 0 5px; }
@@ -215,7 +214,7 @@ body {
       </div>
 
       <div class="heat-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2v10m0 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-3-7.5h6M9 6h6" stroke="rgba(245,176,96,0.9)" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span style="color:white; font-weight:900;font-size:2rem;">!!</span>
         <span><strong>Extreme heat warning.</strong> Rim Walk closed 9am–7:30pm Oct–Apr. Check conditions.</span>
       </div>
 
@@ -231,24 +230,7 @@ body {
       </div>
     </div>
 
-    <!-- Kings Canyon cliff-edge silhouette — dramatic vertical walls -->
-    <svg class="hero-silhouette" viewBox="0 0 460 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Canyon walls — sharp angular cliffs -->
-      <!-- Left canyon wall -->
-      <path d="M0 60 L0 0 L30 0 L30 35 L50 40 L50 60Z" fill="#601800" opacity="0.55"/>
-      <path d="M30 0 L75 0 L75 22 L60 28 L50 40 L30 35Z" fill="#7A2008" opacity="0.4"/>
-      <!-- Central canyon gap -->
-      <path d="M75 0 L110 0 L115 18 L112 35 L108 50 Q105 56 100 60 L85 60 Q80 56 82 50 L85 35 L82 18Z" fill="#8A2808" opacity="0.35"/>
-      <!-- Mid section plateau -->
-      <path d="M115 18 L180 0 L220 0 L225 14 L220 28 L200 38 L185 50 L175 60 L145 60 L140 50 L130 38 L115 30Z" fill="#7A2008" opacity="0.4"/>
-      <!-- Right section -->
-      <path d="M225 14 L280 0 L320 0 L320 20 L310 32 L295 42 L280 52 L265 58 L250 60 L225 60 L230 50 L240 38 L230 28Z" fill="#8A2808" opacity="0.38"/>
-      <!-- Far right wall -->
-      <path d="M320 0 L380 0 L380 16 L365 26 L355 40 L345 52 L330 60 L310 60 L318 44 L326 30 L320 20Z" fill="#6A1800" opacity="0.42"/>
-      <path d="M380 0 L460 0 L460 60 L370 60 L378 44 L385 28 L380 16Z" fill="#7A2008" opacity="0.45"/>
-      <!-- Ground base -->
-      <path d="M0 58 Q80 52 160 58 Q240 62 320 56 Q390 52 460 58 L460 60 L0 60Z" fill="#FAFAF8"/>
-    </svg>
+    
   </div>
 
   <div class="body">
@@ -261,7 +243,7 @@ body {
     </div>
 
     <div class="heat-notice">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px;"><path d="M12 2v10m0 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM9 4.5h6M9 7h6" stroke="#B8560A" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span style="color:red;">!!!</span>
       <p><strong>Heat safety:</strong> Kings Canyon Rim Walk is a strenuous 6km hike. Carry at least 3L of water per person. The walk is closed during extreme heat (Oct–Apr, 9am–7:30pm). Creek Walk available year-round.</p>
     </div>
 
@@ -283,12 +265,12 @@ body {
         <div class="link-text"><strong>Watarrka NP — Park Access Status</strong><span>Check if the park is open · NT.gov.au</span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
-      <a class="link-item" href="#" target="_blank">
+      <a class="link-item" href="https://nt.gov.au/_media/docs/parks/bushwalking-and-hiking/watarrka-national-park-walking-tracks.pdf" target="_blank">
         <div class="link-icon li-blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#4A7FA5" stroke-width="1.8"/><path d="M7 8h10M7 12h10M7 16h6" stroke="#4A7FA5" stroke-width="1.8" stroke-linecap="round"/></svg></div>
         <div class="link-text"><strong>Watarrka Fact Sheet</strong><span>Walks, wildlife &amp; visitor guide <span class="dl-badge">PDF</span></span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
-      <a class="link-item" href="#" target="_blank">
+      <a class="link-item" href="https://www.visitsequoia.com/wp-content/uploads/2024/03/SEKI-hiking-trail-map.pdf?la=en" target="_blank">
         <div class="link-icon li-amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="16" rx="2" stroke="#E07B1A" stroke-width="1.8"/><circle cx="12" cy="11" r="3" stroke="#E07B1A" stroke-width="1.5"/><path d="M5 7l3 2M19 7l-3 2M5 15l3-2M19 15l-3-2" stroke="#E07B1A" stroke-width="1.2" stroke-linecap="round"/></svg></div>
         <div class="link-text"><strong>Kings Canyon Trail Map</strong><span>Rim Walk, Creek Walk &amp; facilities <span class="dl-badge">PDF</span></span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -297,7 +279,7 @@ body {
 
     <div class="section-head" style="margin-top:10px;"><span>Resources &amp; Safety</span></div>
     <div class="link-list" style="margin-bottom:14px;">
-      <a class="link-item" href="https://ntroads.com.au" target="_blank">
+      <a class="link-item" href="https://roadreport.nt.gov.au/home" target="_blank">
         <div class="link-icon li-amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v5" stroke="#E07B1A" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="17" r="3" stroke="#E07B1A" stroke-width="1.8"/><path d="M10 17H9" stroke="#E07B1A" stroke-width="1.8" stroke-linecap="round"/></svg></div>
         <div class="link-text"><strong>NT Road Report</strong><span>Luritja Rd, Mereenie Loop &amp; regional conditions</span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
