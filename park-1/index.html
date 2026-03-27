@@ -1,102 +1,931 @@
-<!DOCTYPE html>
-<!-- saved from url=(0067)https://iap2.onewifi.com.au/splash/9bb1dc5f4c646d636070f51517aae701 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="referrer" content="no-referrer-when-downgrade">
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NT Parks &amp; Wildlife — Guest Wi-Fi</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&amp;family=Barlow:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --ochre:   #C1440E;
+  --rust:    #9B3409;
+  --amber:   #E07B1A;
+  --gold:    #F2A83B;
+  --sand:    #F5ECD8;
+  --stone:   #D4C4A8;
+  --dusk:    #2B3A4E;
+  --sky:     #4A7FA5;
+  --charcoal:#1A1A1A;
+  --white:   #FFFFFF;
+  --offwhite:#FAFAF8;
+  --alert:   #D64000;
+}
 
-<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<title>City of Darwin - Free WiFi</title>
+body {
+  min-height: 100vh;
+  background: var(--dusk);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(193,68,14,0.25) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  font-family: 'Barlow', sans-serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 16px 40px;
+  overflow-x: hidden;
+}
 
-<link href="./cd-files/style.css" rel="stylesheet" type="text/css">
-<link href="./cd-files/framework.css" rel="stylesheet" type="text/css">
-<link href="./cd-files/owl.theme.css" rel="stylesheet" type="text/css">
-<link href="./cd-files/swipebox.css" rel="stylesheet" type="text/css">
-<link href="./cd-files/font-awesome.css" rel="stylesheet" type="text/css">
-<link href="./cd-files/animate.css" rel="stylesheet" type="text/css">
-<link href="./cd-files/bootstrap.min.css" rel="stylesheet" type="text/css">
+/* ── CARD ── */
+.card {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 8px 60px rgba(0,0,0,0.55), 0 2px 0 var(--ochre);
+  animation: lift 0.6s cubic-bezier(0.22,1,0.36,1) both;
+  position: relative;
+}
+@keyframes lift {
+  from { opacity:0; transform: translateY(28px); }
+  to   { opacity:1; transform: translateY(0); }
+}
 
-<script type="text/javascript" src="./cd-files/jquery.js.download"></script>
-<script type="text/javascript" src="./cd-files/jqueryui.js.download"></script>
-<script type="text/javascript" src="./cd-files/framework.plugins.js.download"></script>
-<script type="text/javascript" src="./cd-files/custom.js.download"></script>
+/* ── HERO HEADER ── */
+.hero {
+  background: var(--ochre);
+  background-image: linear-gradient(160deg, var(--rust) 0%, var(--ochre) 45%, var(--amber) 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
 
+/* Outback dot-pattern overlay */
+.hero::before {
+  content:'';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+/* Layered rock silhouette at bottom of hero */
+.hero-rock {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin-top: -2px;
+}
+
+.hero-inner {
+  padding: 28px 28px 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* NT Government masterbrand strip */
+.gov-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.gov-logo {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 2px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.gov-logo span {
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.gov-strip .divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.3);
+}
+.gov-strip .dept {
+  color: rgba(255,255,255,0.75);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+}
+
+/* Park selector tabs */
+.park-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 18px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.park-tab {
+  flex: 1;
+  padding: 8px 4px;
+  background: rgba(0,0,0,0.2);
+  border: none;
+  color: rgba(255,255,255,0.65);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  line-height: 1.3;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.park-tab:last-child { border-right: none; }
+.park-tab.active {
+  background: rgba(255,255,255,0.18);
+  color: white;
+  font-weight: 700;
+}
+
+/* Hero title */
+.hero-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(28px, 7vw, 36px);
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.0;
+  margin-bottom: 4px;
+}
+.hero-subtitle {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hero-desc {
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Signal badge */
+.signal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 100px;
+  padding: 5px 12px 5px 8px;
+  margin-bottom: 16px;
+}
+.sig-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #5FD068;
+  box-shadow: 0 0 6px #5FD068;
+  animation: sigpulse 2s ease-in-out infinite;
+}
+@keyframes sigpulse {
+  0%,100%{box-shadow:0 0 0 0 rgba(95,208,104,0.6);}
+  50%{box-shadow:0 0 0 5px rgba(95,208,104,0);}
+}
+.signal-badge span {
+  color: rgba(255,255,255,0.85);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ── BODY ── */
+.body {
+  background: var(--offwhite);
+  padding: 0;
+}
+
+/* ── ALERT BANNER ── */
+.alert-bar {
+  background: var(--alert);
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.alert-bar svg { flex-shrink: 0; margin-top: 1px; }
+.alert-bar-text {
+  flex: 1;
+}
+.alert-bar-text strong {
+  display: block;
+  color: white;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+.alert-bar-text span {
+  color: rgba(255,255,255,0.88);
+  font-size: 12px;
+}
+.alert-bar a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* ── PRIMARY CTA BUTTONS ── */
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px 20px 14px;
+}
+.cta-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 12px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+.cta-btn::before {
+  content:'';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background 0.18s;
+}
+.cta-btn:hover::before { background: rgba(255,255,255,0.08); }
+.cta-btn:active { transform: scale(0.98); }
+
+.cta-btn.primary {
+  background: var(--ochre);
+  background-image: linear-gradient(135deg, var(--rust), var(--ochre));
+  box-shadow: 0 3px 14px rgba(193,68,14,0.35);
+}
+.cta-btn.secondary {
+  background: var(--dusk);
+  background-image: linear-gradient(135deg, #1e2d3d, var(--dusk));
+  box-shadow: 0 3px 14px rgba(43,58,78,0.3);
+}
+.cta-btn-icon {
+  width: 32px; height: 32px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.cta-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ── SECTION DIVIDER ── */
+.section-head {
+  padding: 6px 20px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  margin-top: 4px;
+}
+.section-head span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #999;
+  white-space: nowrap;
+}
+.section-head::after {
+  content:'';
+  flex: 1;
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+}
+
+/* ── LINK LIST ── */
+.link-list {
+  padding: 0 20px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-left: 3px solid transparent;
+}
+.link-item:hover {
+  border-left-color: var(--ochre);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transform: translateX(2px);
+}
+.link-icon {
+  width: 34px; height: 34px;
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.link-icon.orange { background: rgba(193,68,14,0.1); }
+.link-icon.blue   { background: rgba(74,127,165,0.12); }
+.link-icon.amber  { background: rgba(224,123,26,0.1); }
+.link-icon.dark   { background: rgba(43,58,78,0.1); }
+.link-icon.green  { background: rgba(60,130,80,0.1); }
+
+.link-text { flex: 1; }
+.link-text strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 1px;
+}
+.link-text span {
+  font-size: 11.5px;
+  color: #888;
+}
+.link-arrow { color: #ccc; flex-shrink: 0; }
+.link-item:hover .link-arrow { color: var(--ochre); }
+
+/* Download badge */
+.dl-badge {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(74,127,165,0.12);
+  color: var(--sky);
+  border-radius: 2px;
+  padding: 2px 6px;
+}
+
+/* ── TERMS SECTION ── */
+.terms-section {
+  padding: 0 20px 14px;
+  margin-top: 6px;
+}
+.terms-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 7px;
+}
+.terms-box {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.09);
+  border-radius: 2px;
+  height: 170px;
+  overflow-y: auto;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  scroll-behavior: smooth;
+}
+.terms-box::-webkit-scrollbar { width: 3px; }
+.terms-box::-webkit-scrollbar-thumb { background: var(--stone); border-radius: 3px; }
+
+.terms-box h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--dusk);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 12px 0 5px;
+}
+.terms-box h4:first-child { margin-top: 0; }
+.terms-box p {
+  font-size: 11.5px;
+  line-height: 1.65;
+  color: #666;
+  margin-bottom: 8px;
+}
+.terms-box ul {
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+.terms-box li {
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 3px;
+}
+.terms-scroll-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 10.5px;
+  color: #bbb;
+  margin-bottom: 12px;
+  transition: opacity 0.3s;
+}
+
+/* Accept checkbox */
+.accept-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 14px;
+  background: white;
+  border: 1.5px solid rgba(0,0,0,0.09);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.18s;
+  margin-bottom: 12px;
+}
+.accept-row:hover { border-color: var(--stone); }
+.accept-row.checked { border-color: var(--ochre); background: rgba(193,68,14,0.04); }
+
+.chk {
+  width: 20px; height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  background: white;
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.18s;
+}
+.accept-row.checked .chk { background: var(--ochre); border-color: var(--ochre); }
+.chk svg { opacity: 0; transform: scale(0.3); transition: all 0.18s; }
+.accept-row.checked .chk svg { opacity: 1; transform: scale(1); }
+
+.accept-row label {
+  font-size: 12.5px;
+  color: #444;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.accept-row label strong { color: var(--ochre); }
+
+/* ── CONNECT BUTTONS ── */
+.connect-section {
+  padding: 0 20px 20px;
+}
+.btn-connect {
+  width: 100%;
+  padding: 16px;
+  background: var(--ochre);
+  background-image: linear-gradient(135deg, var(--rust) 0%, var(--ochre) 100%);
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.18s;
+  box-shadow: 0 4px 16px rgba(193,68,14,0.35);
+  margin-bottom: 8px;
+}
+.btn-connect:hover:not(:disabled) { box-shadow: 0 6px 20px rgba(193,68,14,0.45); transform: translateY(-1px); }
+.btn-connect:active:not(:disabled) { transform: translateY(0); }
+.btn-connect:disabled { opacity: 0.38; cursor: not-allowed; box-shadow: none; }
+
+.btn-guest {
+  width: 100%;
+  padding: 13px;
+  background: transparent;
+  color: #888;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.btn-guest:hover { border-color: #bbb; color: #555; background: rgba(0,0,0,0.02); }
+
+/* ── FOOTER ── */
+.portal-footer {
+  background: var(--dusk);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-brand span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.footer-links {
+  display: flex;
+  gap: 14px;
+}
+.footer-links a {
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: var(--gold); }
+
+/* ── SUCCESS OVERLAY ── */
+.success-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--offwhite);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.success-overlay.show { opacity: 1; pointer-events: all; }
+.success-icon {
+  width: 68px; height: 68px;
+  background: var(--ochre);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 22px;
+  animation: popIn 0.5s cubic-bezier(0.22,1,0.36,1) both 0.1s;
+  opacity: 0;
+}
+@keyframes popIn {
+  from { opacity:0; transform:scale(0.4); }
+  to   { opacity:1; transform:scale(1); }
+}
+.success-overlay h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--dusk);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+.success-overlay p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+.connecting-dots { font-size: 12px; color: #bbb; margin-top: 18px; }
+.connecting-dots span { animation: blink 1.2s infinite; }
+.connecting-dots span:nth-child(2) { animation-delay: 0.2s; }
+.connecting-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink { 0%,80%,100%{opacity:0;} 40%{opacity:1;} }
+
+/* ── OR divider ── */
+.or-divider {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 8px;
+}
+.or-divider::before, .or-divider::after {
+  content:''; flex:1; height:1px; background: rgba(0,0,0,0.09);
+}
+.or-divider span { font-size: 10.5px; color: #bbb; font-weight: 600; letter-spacing: 0.1em; }
+</style>
 </head>
 <body>
 
-<div>
-    <div id="splash-page" class="slider-image" style="background-image: url(&quot;https://iap2.onewifi.com.au/images/laptop_creatives/cityofdarwin-civicpark_1719536208.jfif&quot;); height: 443px; width: 1024px;" data-mobile-background="https://iap2.onewifi.com.au/images/mobile_creatives/cityofdarwin-civicpark_bg_1719536208.jfif" data-background="https://iap2.onewifi.com.au/images/laptop_creatives/cityofdarwin-civicpark_1719536208.jfif">
-        
-        <div class="slider-style-1" style="top: 50%; width: 90%; max-width: 500px; margin: -170px auto 0px; position: relative; padding: 20px 0px;">
-            <div id="overlay-text" style="height:auto; margin-bottom:10px;">
-                                    <img style="width: 140px;" id="wifi-img" src="./cd-files/cityofdarwin-civicpark_1737690077.png">
-                                <div id="overlay-text-wrapper">
-                    <h1 style="margin-top:0; padding-top:10px; padding-bottom:0; margin-bottom:0;" class="overlay-text-body">Free Wi-Fi</h1>
-                                    </div>
-            </div>
+<div class="card">
 
-            <a style="padding-top:15px; background-color: #3498db !important; color:#ffffff !important" href="https://iap2.onewifi.com.au/splash/9bb1dc5f4c646d636070f51517aae701#" class="get-access slider-button-1 button-blue ui-link">CONNECT</a>
-        </div>
+  <!-- ─── SUCCESS OVERLAY ─── -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
     </div>
-</div>
+    <h2>You're Connected</h2>
+    <p>Welcome to NT Parks &amp; Wildlife Guest Wi-Fi.<br>Enjoy your visit — stay safe and respect Country.</p>
+    <p class="connecting-dots">Redirecting<span>.</span><span>.</span><span>.</span></p>
+  </div>
 
-<div id="terms-and-conditions" class="content">
-    <div class="decoration"></div>
-    <div>
-        <h4>Plain English Terms and Conditions of Use of this WiFi Service</h4>
-        <p style="margin-bottom: 10px; line-height:20px;">If you choose to continue, you are agreeing to comply with and be bound by the following terms and conditions of use.</p>
-        <div class="formTextareaWrap">
-            <textarea data-role="none" name="terms_and_conditions" class="contactTextarea requiredField" id="contactMessageTextarea" readonly="readonly">Users of City of Darwin public wireless network agree to the following conditions:
-•	Users are responsible and liable for all material accessed, transmitted &amp; displayed during their internet session. The internet is not to be used to access, transmit or display material that is illegal, offensive, pornographic, or objectionable.
-•	Users must respect copyright laws and software licensing agreements. 
-•	Users will be considerate of other public space users and use headphones when playing sound files.
-•	The City of Darwin does not accept responsibility for any loss of data resulting from delays, non-deliveries, service interruptions, technical difficulties, or transmission of viruses.
-•	City of Darwin public wireless network is a non-secure network. Information sent to and from the wireless device may be captured by anyone else with a wireless device. 
-•	Any user identified as breaching the above conditions will be denied access to the internet.
+  <!-- ─── HERO ─── -->
+  <div class="hero">
+    <div class="hero-inner">
 
-DISCLAIMER: City of Darwin assume no responsibility for any damages, direct or indirect, arising from use of its connections to internet services. 
-
-City of Darwin reserves the right to modify these conditions of use at any time.</textarea>
+      <!-- NT Gov masterbrand -->
+      <div class="gov-strip">
+        <div class="gov-logo">
+          <!-- NT outline shape -->
+          <svg width="16" height="16" viewBox="0 0 32 38" fill="none">
+            <path d="M4 0h24v28l-12 10L4 28V0Z" fill="white" opacity="0.9"></path>
+            <path d="M16 4v20M8 10h16" stroke="#C1440E" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+          <span>NT Government</span>
         </div>
-                                    <form id="user-registration" action="https://iap2.onewifi.com.au/splash/register_user" method="POST" data-redirection_url="https://www.darwin.nt.gov.au/resident-services/free-wifi">
-                    <input type="hidden" name="_token" value="ChIpFaZSdIh35g9Qhnt8wLnXCEYSqz8aPwLVN4kZ">
-                    <input type="hidden" name="session_id" value="0">
-                    
-                                        <button id="laptop-connect-btn" type="submit" style="background-color: #3498db !important; color:#ffffff !important" class="buttonWrap button button-blue contactSubmitButton"><i class="fa fa-check"></i>I ACCEPT</button>
-                                    </form>
-                        </div>
-</div>
+        <div class="divider"></div>
+        <div class="dept">Parks &amp; Wildlife Commission</div>
+      </div>
 
-<div class="content">
-    <br><br><br>
-        <img class="islogo" src="./cd-files/onewifi.png" alt="OneWifi Logo">
+      <!-- Park selector -->
+      
+
+      <!-- Dynamic park title -->
+      <div class="hero-subtitle" id="heroRegion">Top End, NT — Litchfield National Park</div>
+      <h1 class="hero-title" id="heroTitle">Wangi Falls</h1>
+      <p class="hero-desc" id="heroDesc">Welcome to Wangi Falls in Litchfield National Park. Connect to access park information, trail maps, booking services and road reports.</p>
+
+      <!-- Signal indicator -->
+      <div class="signal-badge">
+        <div class="sig-dot"></div>
+        <span id="ssidLabel">NT-PARKS-WANGI · Free Guest Wi-Fi</span>
+      </div>
+
     </div>
 
-<!-- Page Footer-->
-<div class="footer">
-    <p class="center-text">Copyright OneWiFi 2026. All rights reserved.</p>
-</div>
+    <!-- Rock silhouette bottom of hero (SVG) -->
+    <svg class="hero-rock" viewBox="0 0 460 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 48 L0 32 Q30 18 60 28 Q80 34 100 22 Q120 10 150 20 Q170 28 195 16 Q220 4 250 18 Q275 30 300 20 Q325 10 355 24 Q380 36 410 22 Q435 12 460 28 L460 48 Z" fill="#FAFAF8"></path>
+    </svg>
+  </div>
 
+  <!-- ─── BODY ─── -->
+  <div class="body">
 
+    <!-- Alert / Road Closure Banner -->
+    <div class="alert-bar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L2 21h20L12 2Z" stroke="white" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M12 9v5M12 17h.01" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+      </svg>
+      <div class="alert-bar-text">
+        <strong>Road &amp; Park Status</strong>
+        <span>Check current conditions before exploring. <a href="https://ntroads.com.au" target="_blank">NT Road Report →</a></span>
+      </div>
+    </div>
 
+    <!-- Primary CTAs -->
+    <div class="cta-grid">
+      <a class="cta-btn primary" href="https://nt.gov.au/leisure/parks-reserves/pay-for-a-parks-pass" target="_blank">
+        <div class="cta-btn-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="5" width="20" height="14" rx="2" stroke="white" stroke-width="2"></rect>
+            <path d="M2 10h20" stroke="white" stroke-width="2"></path>
+            <path d="M6 15h4" stroke="white" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+        </div>
+        <span class="cta-label">Buy a Parks Pass</span>
+      </a>
+      <a class="cta-btn secondary" href="https://nt.gov.au/parks/booking" target="_blank">
+        <div class="cta-btn-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="4" width="18" height="18" rx="2" stroke="white" stroke-width="2"></rect>
+            <path d="M16 2v4M8 2v4M3 10h18" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M8 14h2v2H8z" fill="white"></path>
+          </svg>
+        </div>
+        <span class="cta-label">Book Online</span>
+      </a>
+    </div>
 
+    <!-- Park Info links -->
+    <div class="section-head"><span>Park Information</span></div>
+    <div class="link-list">
+      
 
+      
 
+      <a class="link-item" href="#" target="_blank">
+        <div class="link-icon amber">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="3" width="20" height="16" rx="2" stroke="#E07B1A" stroke-width="1.8"></rect>
+            <path d="M8 8l4-2 4 2-4 8-4-8Z" fill="#E07B1A" opacity="0.5"></path>
+            <circle cx="12" cy="12" r="1.5" fill="#E07B1A"></circle>
+          </svg>
+        </div>
+        <div class="link-text">
+          <strong id="mapLabel">Wangi Falls Park Map</strong>
+          <span>Trails, facilities &amp; campgrounds <span class="dl-badge">PDF</span></span>
+        </div>
+        <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      </a>
+    </div>
 
+    <!-- External Resources -->
+    <div class="section-head" style="margin-top:10px;"><span>Resources &amp; Safety</span></div>
+    <div class="link-list" style="margin-bottom:14px;">
+      <a class="link-item" href="https://ntroads.com.au" target="_blank">
+        <div class="link-icon amber">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2v20M4 6l8-4 8 4" stroke="#E07B1A" stroke-width="1.8" stroke-linecap="round"></path>
+            <path d="M4 12h16" stroke="#E07B1A" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 2"></path>
+          </svg>
+        </div>
+        <div class="link-text">
+          <strong>NT Road Report</strong>
+          <span>Live road conditions &amp; closures</span>
+        </div>
+        <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      </a>
+      <a class="link-item" href="https://securent.nt.gov.au" target="_blank">
+        <div class="link-icon dark">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L4 6v6c0 4.5 3.5 8.7 8 10 4.5-1.3 8-5.5 8-10V6L12 2Z" stroke="#2B3A4E" stroke-width="1.8" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="link-text">
+          <strong>SecureNT</strong>
+          <span>Emergency &amp; safety information</span>
+        </div>
+        <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      </a>
+      <a class="link-item" href="https://northernterritory.com" target="_blank">
+        <div class="link-icon green">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="#3C8250" stroke-width="1.8"></circle>
+            <path d="M3 12h18M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9" stroke="#3C8250" stroke-width="1.5"></path>
+          </svg>
+        </div>
+        <div class="link-text">
+          <strong>NorthernTerritory.com</strong>
+          <span>Explore the Territory</span>
+        </div>
+        <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      </a>
+    </div>
 
+    <!-- ─── Terms ─── -->
+    <div class="terms-section">
+      <div class="terms-label">Terms of Use — Guest Wi-Fi</div>
+      <div class="terms-box" id="termsBox">
+        <h4>1. Service Overview</h4>
+        <p>The NT Parks &amp; Wildlife Guest Wi-Fi network ("Network") is provided by the Parks and Wildlife Commission of the Northern Territory for the use of park visitors accessing the Network at designated sites including Wangi Falls, Karlu Karlu and Watarrka National Park. By connecting to this Network you agree to these Terms of Use.</p>
 
+        <h4>2. Permitted Use</h4>
+        <p>This Network is provided to support your visit to NT Parks. Permitted uses include:</p>
+        <ul>
+          <li>Accessing park information, maps, and fact sheets</li>
+          <li>Making campsite bookings or purchasing a Parks Pass</li>
+          <li>Checking road and closure conditions</li>
+          <li>General web browsing and communication</li>
+          <li>Accessing emergency contacts and safety information</li>
+        </ul>
 
+        <h4>3. Prohibited Activities</h4>
+        <p>You must not use this Network to:</p>
+        <ul>
+          <li>Engage in any unlawful, harmful, or fraudulent activity</li>
+          <li>Download, upload, or distribute illegal or offensive content</li>
+          <li>Conduct large file transfers or peer-to-peer sharing that degrades the Network</li>
+          <li>Attempt to access, monitor, or disrupt other users or network infrastructure</li>
+          <li>Engage in commercial activity or unsolicited communications</li>
+        </ul>
 
+        <h4>4. Availability &amp; Liability</h4>
+        <p>The Network is provided on an "as is" basis. The Parks and Wildlife Commission does not guarantee availability, speed, reliability, or security of the service. We reserve the right to restrict or terminate access at any time. The Commission accepts no liability for loss or damage resulting from use of this Network.</p>
 
+        <h4>5. Privacy &amp; Data Collection</h4>
+        <p>Your connection activity may be logged for network management, security, and analytics purposes in accordance with applicable Northern Territory and Commonwealth legislation. De-identified usage data may be used to improve park services. By connecting, you consent to this data collection.</p>
 
+        <h4>6. Security</h4>
+        <p>This is a public Wi-Fi network. You connect at your own risk. We recommend using a VPN and keeping your device security up to date. Do not transmit sensitive personal or financial information on this Network.</p>
 
+        <h4>7. Governing Law</h4>
+        <p>These Terms of Use are governed by the laws of the Northern Territory of Australia. Any disputes shall be subject to the jurisdiction of the courts of the Northern Territory.</p>
 
+        <p style="font-size:10.5px;color:#bbb;margin-top:14px;">Parks and Wildlife Commission of the Northern Territory · Terms updated March 2025 · Subject to NT Government Legal review.</p>
+      </div>
+      <div class="terms-scroll-note" id="scrollNote" style="opacity: 0;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="#ccc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Scroll to read full terms
+      </div>
 
+      <!-- Accept checkbox -->
+      <div class="accept-row" id="acceptRow" onclick="toggleAccept()">
+        <div class="chk" id="chkBox">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
+            <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <label>I have read and agree to the <strong>Terms of Use</strong> for the NT Parks &amp; Wildlife Guest Wi-Fi network.</label>
+      </div>
+    </div>
 
+    <!-- ─── Connect buttons ─── -->
+    <div class="connect-section">
+      <button class="btn-connect" id="btnConnect" disabled="" onclick="doConnect()">
+        Accept &amp; Connect to Wi-Fi
+      </button>
+      <div class="or-divider"><span>or</span></div>
+      <button class="btn-guest" onclick="doGuest()">Continue as Guest (Limited Access)</button>
+    </div>
 
+  </div><!-- /body -->
 
+  <!-- ─── FOOTER ─── -->
+  <div class="portal-footer">
+    <div class="footer-brand">
+      <svg width="18" height="18" viewBox="0 0 32 38" fill="none">
+        <path d="M4 0h24v28l-12 10L4 28V0Z" fill="rgba(255,255,255,0.2)"></path>
+        <path d="M16 5v16M10 11h12" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"></path>
+      </svg>
+      <span>Parks &amp; Wildlife Commission NT</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://nt.gov.au/parks">NT.gov.au/parks</a>
+      <a href="https://northernterritory.com">NT.com</a>
+    </div>
+  </div>
 
+</div><!-- /card -->
 
+<script>
+  // ── Park data ──
+  const parks = {
+    'Wangi Falls':   { region:'Top End, NT — Litchfield National Park', ssid:'NT-PARKS-WANGI', desc:'Welcome to Wangi Falls in Litchfield National Park. Connect to access park information, trail maps, booking services and road reports.' },
+    'Karlu Karlu':   { region:'Central NT — Devils Marbles Conservation Reserve', ssid:'NT-PARKS-KARLUK', desc:'Welcome to Karlu Karlu / Devils Marbles. Connect to access park information, cultural guides, maps and emergency services.' },
+    'Watarrka NP':   { region:'Red Centre, NT — Kings Canyon', ssid:'NT-PARKS-WATARRKA', desc:'Welcome to Watarrka National Park — Kings Canyon. Connect to access trail conditions, park maps, booking services and road reports.' },
+  };
+
+  function setpark(btn, name, region, loc) {
+    document.querySelectorAll('.park-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    const p = parks[name];
+    document.getElementById('heroTitle').textContent = name;
+    document.getElementById('heroRegion').textContent = p.region;
+    document.getElementById('heroDesc').textContent = p.desc;
+    document.getElementById('ssidLabel').textContent = p.ssid + ' · Free Guest Wi-Fi';
+    document.getElementById('parkStatusLabel').textContent = name + ' — Park Access Status';
+    document.getElementById('factsheetLabel').textContent = name + ' Fact Sheet';
+    document.getElementById('mapLabel').textContent = name + ' Park Map';
+  }
+
+  // ── Scroll hint ──
+  const termsBox = document.getElementById('termsBox');
+  const scrollNote = document.getElementById('scrollNote');
+  termsBox.addEventListener('scroll', () => {
+    scrollNote.style.opacity = termsBox.scrollTop > 20 ? '0' : '1';
+  });
+
+  // ── Accept ──
+  let accepted = false;
+  function toggleAccept() {
+    accepted = !accepted;
+    document.getElementById('acceptRow').classList.toggle('checked', accepted);
+    document.getElementById('btnConnect').disabled = !accepted;
+  }
+
+  // ── Connect ──
+  function doConnect() {
+    if (!accepted) return;
+    document.getElementById('successOverlay').classList.add('show');
+  }
+  function doGuest() {
+    document.getElementById('successOverlay').classList.add('show');
+    document.querySelector('.success-overlay p').textContent = 'Connected with limited access. Accept the Terms of Use for full park services.';
+  }
+</script>
 
 </body></html>
