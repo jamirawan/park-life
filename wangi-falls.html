@@ -47,8 +47,6 @@ body {
 /* ── HERO ── */
 .hero {
   background: var(--park-accent);
-  background-image: linear-gradient(160deg, #0F4A38 0%, var(--park-accent) 50%, #25906E 100%);
-  position: relative; overflow: hidden; padding: 0;
 }
 .hero::before {
   content:'';
@@ -76,7 +74,7 @@ body {
 }
 .gov-logo span {
   color: white; font-family:'Barlow Condensed',sans-serif;
-  font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;
+  font-size:2rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;
 }
 .gov-strip .pipe { width:1px; height:16px; background:rgba(255,255,255,0.25); }
 .gov-strip .dept { color:rgba(255,255,255,0.7); font-size:10.5px; letter-spacing:0.05em; }
@@ -115,8 +113,8 @@ body {
 @keyframes sigpulse{0%,100%{box-shadow:0 0 0 0 rgba(95,208,104,0.6);}50%{box-shadow:0 0 0 5px rgba(95,208,104,0);}}
 .signal-badge span { color:rgba(255,255,255,0.82); font-size:11.5px; font-weight:600; letter-spacing:0.05em; }
 
-/* Rock/waterfall SVG silhouette */
-.hero-silhouette { display:block; width:100%; margin-top:-2px; }
+/* Rock/waterfall SVG silhouette
+.hero-silhouette { display:block; width:100%; margin-top:-2px; }  */
 
 /* ── BODY ── */
 .body { background:var(--offwhite); }
@@ -187,7 +185,7 @@ body {
 .terms-label { font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#999;margin-bottom:7px; }
 .terms-box {
   background:white; border:1px solid rgba(0,0,0,0.09); border-radius:2px;
-  height:160px; overflow-y:auto; padding:14px 16px; margin-bottom:8px; scroll-behavior:smooth;
+  height:60vw; overflow-y:auto; padding:14px 16px; margin-bottom:8px; scroll-behavior:smooth;
 }
 .terms-box::-webkit-scrollbar { width:3px; }
 .terms-box::-webkit-scrollbar-thumb { background:#D4C4A8; border-radius:3px; }
@@ -283,14 +281,10 @@ body {
     <div class="hero-inner">
       <div class="gov-strip">
         <div class="gov-logo">
-          <svg width="14" height="17" viewBox="0 0 28 34" fill="none">
-            <path d="M2 0h24v24l-12 10L2 24V0Z" fill="white" opacity="0.85"/>
-            <path d="M14 4v14M8 9h12" stroke="#1A7A5E" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-          <span>NT Government</span>
+                   <span>Logo here</span>
         </div>
         <div class="pipe"></div>
-        <div class="dept">Parks &amp; Wildlife Commission</div>
+        <div class="dept">Parks &amp; Wildlife </div>
       </div>
 
       <div class="location-crumb">
@@ -310,17 +304,17 @@ body {
       </div>
     </div>
 
-    <!-- Waterfall + tropical rock silhouette -->
+    <!-- Waterfall + tropical rock silhouette 
     <svg class="hero-silhouette" viewBox="0 0 460 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Water cascade lines -->
+     Water cascade lines 
       <path d="M150 0 Q155 20 152 52" stroke="rgba(255,255,255,0.07)" stroke-width="3" fill="none"/>
       <path d="M160 0 Q162 25 158 52" stroke="rgba(255,255,255,0.05)" stroke-width="2" fill="none"/>
-      <!-- Rock cliff base -->
+      Rock cliff base 
       <path d="M0 52 L0 30 Q20 16 50 26 Q75 34 95 18 Q115 4 140 16 Q158 26 175 10 Q192 0 210 14 Q228 26 248 18 Q265 10 285 20 Q305 30 330 18 Q355 8 380 22 Q405 34 430 20 Q447 10 460 24 L460 52 Z" fill="#FAFAF8"/>
-      <!-- Small rock details -->
+    Small rock details 
       <path d="M100 38 Q108 28 118 36" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" fill="none"/>
       <path d="M310 30 Q322 22 334 30" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" fill="none"/>
-    </svg>
+    </svg>-->
   </div>
 
   <!-- Body -->
@@ -367,11 +361,11 @@ body {
         <div class="link-text"><strong>Wangi Falls — Park Access Status</strong><span>Check if the park is open · NT.gov.au</span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
-      <a class="link-item" href="#" target="_blank">
+      <a class="link-item" href="https://nt.gov.au/_media/docs/parks/find-a-park-to-visit/darwin-region/litchfield-national-park/litchfield-national-park-short-walks-information-sheet.pdf" target="_blank">
         <div class="link-icon li-blue">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#4A7FA5" stroke-width="1.8"/><path d="M7 8h10M7 12h10M7 16h6" stroke="#4A7FA5" stroke-width="1.8" stroke-linecap="round"/></svg>
         </div>
-        <div class="link-text"><strong>Wangi Falls Fact Sheet</strong><span>Visitor guide, trails &amp; facilities <span class="dl-badge">PDF</span></span></div>
+        <div class="link-text"><strong>Wangi Falls information sheet</strong><span>Visitor guide, trails &amp; facilities <span class="dl-badge">PDF</span></span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
       <a class="link-item" href="#" target="_blank">
