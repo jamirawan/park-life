@@ -36,7 +36,7 @@ body {
 
 /* ── CARD ── */
 .card {
-  width: 100%; max-width: 460px;
+  width: 100%; max-width: 800px;
   border-radius: 2px; overflow: hidden;
   box-shadow: 0 8px 60px rgba(0,0,0,0.6), 0 2px 0 var(--park-accent);
   animation: lift 0.6s cubic-bezier(0.22,1,0.36,1) both;
@@ -159,7 +159,14 @@ body {
 .section-head::after { content:''; flex:1; height:1px; background:rgba(0,0,0,0.08); }
 
 /* Link list */
-.link-list { padding:0 20px 4px; display:flex; flex-direction:column; gap:6px; }
+.link-list { padding:0 20px 4px; display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; }
+
+@media (max-width: 480px) {
+  .link-list { grid-template-columns:1fr; }
+}
+
+
+
 .link-item {
   display:flex; align-items:center; gap:12px; padding:12px 14px;
   background:white; border:1px solid rgba(0,0,0,0.07); border-radius:2px;
@@ -271,7 +278,7 @@ body {
     <div class="success-icon">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
-    <h2>You're Connected!</h2>
+    <h2>You're connected!</h2>
     <p>Welcome to Wangi Falls.<br>Enjoy the plunge pools and stay safe — always check swimming conditions.</p>
     <p class="dots">Redirecting<span>.</span><span>.</span><span>.</span><span>.</span></p>
   </div>
@@ -352,7 +359,7 @@ body {
     </div>
 
     <!-- Park Info -->
-    <div class="section-head"><span>Park Information</span></div>
+    <div class="section-head"><h2>Park Information</h2></div>
     <div class="link-list">
       <a class="link-item" href="https://nt.gov.au/parks/find-a-park/litchfield-national-park" target="_blank">
         <div class="link-icon li-green">
@@ -378,9 +385,9 @@ body {
     </div>
 
     <!-- Resources & Safety -->
-    <div class="section-head" style="margin-top:10px;"><span>Resources &amp; Safety</span></div>
+    <div class="section-head" style="margin-top:10px;"><h2>Resources &amp; Safety</h2></div>
     <div class="link-list" style="margin-bottom:14px;">
-      <a class="link-item" href="https://ntroads.com.au" target="_blank">
+      <a class="link-item" href="https://roadsafety.nt.gov.au/" target="_blank">
         <div class="link-icon li-amber">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v5" stroke="#E07B1A" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="17" r="3" stroke="#E07B1A" stroke-width="1.8"/><path d="M10 17H9" stroke="#E07B1A" stroke-width="1.8" stroke-linecap="round"/></svg>
         </div>
