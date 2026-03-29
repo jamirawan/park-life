@@ -13,139 +13,197 @@
   --gold:    #F2A83B;
   --dusk:    #2B3A4E;
   --sky:     #4A7FA5;
+  --teal:    #1E6B6B;
   --offwhite:#FAFAF8;
-  --alert:   #C43B00;
-  /* Karlu Karlu — deep red ochre, burnt sienna, sandstone; sacred red rock country */
-  --park-accent: #A83218;
-  --park-mid:    #C84020;
-  --park-light:  #E8926A;
+  --alert:   #D64000;
+  /* Wangi accent — lush tropical green-teal for Top End waterfall country */
+  --park-accent: #1A7A5E;
+  --park-mid:    #25A07A;
+  --park-light:  #4DC4A0;
 }
-*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  min-height:100vh;
-  background: #3A1A0A;
+  min-height: 100vh;
+  background: #1A2E25;
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(168,50,24,0.4) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 40% at 10% 100%, rgba(60,20,5,0.8) 0%, transparent 55%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-  font-family:'Barlow',sans-serif;
-  display:flex; align-items:flex-start; justify-content:center;
-  padding:20px 16px 40px; overflow-x:hidden;
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(26,122,94,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(43,58,78,0.6) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  font-family: 'Barlow', sans-serif;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 20px 16px 40px; overflow-x: hidden;
 }
-.card {
-  width:100%; max-width:460px; border-radius:2px; overflow:hidden;
-  box-shadow:0 8px 60px rgba(0,0,0,0.65), 0 2px 0 var(--park-accent);
-  animation:lift 0.6s cubic-bezier(0.22,1,0.36,1) both; position:relative;
-}
-@keyframes lift{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 
-/* Hero — deep ochre-red for red rock country */
+/* ── CARD ── */
+.card {
+  width: 100%; max-width: 460px;
+  border-radius: 2px; overflow: hidden;
+  box-shadow: 0 8px 60px rgba(0,0,0,0.6), 0 2px 0 var(--park-accent);
+  animation: lift 0.6s cubic-bezier(0.22,1,0.36,1) both;
+  position: relative;
+}
+@keyframes lift { from{opacity:0;transform:translateY(28px);} to{opacity:1;transform:translateY(0);} }
+
+/* ── HERO ── */
 .hero {
   background: var(--park-accent);
-  
 }
 .hero::before {
-  content:''; position:absolute; inset:0;
-  /* Subtle sandstone texture grid */
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(255,255,255,0.025) 28px, rgba(255,255,255,0.025) 29px),
-    repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(255,255,255,0.025) 28px, rgba(255,255,255,0.025) 29px);
-  pointer-events:none;
+  content:'';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 20px 20px; pointer-events: none;
 }
-.hero-inner { padding:28px 28px 12px; position:relative; z-index:1; }
+/* Water ripple effect */
+.hero::after {
+  content:'';
+  position: absolute; bottom: 40px; left: 0; right: 0; height: 30px;
+  background: repeating-linear-gradient(90deg,
+    transparent 0px, transparent 18px,
+    rgba(255,255,255,0.04) 18px, rgba(255,255,255,0.04) 36px);
+  pointer-events: none;
+}
+.hero-inner { padding: 28px 28px 12px; position: relative; z-index: 1; }
 
-.gov-strip { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
-.gov-logo { background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.22); border-radius:2px; padding:4px 10px; display:flex; align-items:center; gap:6px; }
-.gov-logo span { color:white; font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; }
+/* NT Gov strip */
+.gov-strip { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.gov-logo {
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 2px; padding: 4px 10px;
+  display:flex; align-items:center; gap:6px;
+}
+.gov-logo span {
+  color: white; font-family:'Barlow Condensed',sans-serif;
+  font-size:2rem; font-weight:700; letter-spacing:0.12em;  ;
+}
 .gov-strip .pipe { width:1px; height:16px; background:rgba(255,255,255,0.25); }
 .gov-strip .dept { color:rgba(255,255,255,0.7); font-size:10.5px; letter-spacing:0.05em; }
 
-.location-crumb { display:inline-flex; align-items:center; gap:6px; background:rgba(0,0,0,0.25); border-radius:100px; padding:4px 11px 4px 8px; margin-bottom:14px; }
+/* Location crumb */
+.location-crumb {
+  display:inline-flex; align-items:center; gap:6px;
+  background: rgba(0,0,0,0.2); border-radius:100px;
+  padding: 4px 11px 4px 8px; margin-bottom: 14px;
+}
+.location-crumb svg { flex-shrink:0; }
 .location-crumb span { color:rgba(255,255,255,0.8); font-size:11px; letter-spacing:0.05em; }
 
-/* Cultural notice badge */
-.cultural-badge {
-  display:inline-flex; align-items:center; gap:8px;
-  background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);
-  border-radius:2px; padding:7px 12px; margin-bottom:14px;
+.hero-eyebrow {
+  color: white; font: size 12px;px; font-weight:700;
+  letter-spacing:0.18em; text-transform:none; margin-bottom:5px;
 }
-.cultural-badge span { color:rgba(255,255,255,0.9); font-size:11.5px; line-height:1.4; }
-.cultural-badge strong { color:var(--park-light); }
+.hero-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:clamp(32px,8vw,44px);
+  font-weight:800; color:white;  ;
+  letter-spacing:0.03em; line-height:0.95; margin-bottom:6px;
+}
+.hero-title span { display:block; font-size:clamp(14px,3vw,18px); font-weight:400; color:white; letter-spacing:0.08em; margin-top:4px; }
+.hero-desc {
+  color:white; font-size:12.5px; font-weight:300;
+  line-height:1.55; margin-bottom:14px; max-width:340px;
+}
 
-.hero-eyebrow { color:var(--park-light); font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:5px; }
-.hero-title { font-family:'Barlow Condensed',sans-serif; font-size:clamp(30px,7.5vw,42px); font-weight:800; color:white; text-transform:uppercase; letter-spacing:0.03em; line-height:0.95; margin-bottom:6px; }
-.hero-title .alt-name { display:block; font-size:clamp(13px,3vw,17px); font-weight:400; color:rgba(255,255,255,0.6); letter-spacing:0.1em; margin-top:5px; font-style:italic; text-transform:none; }
-.hero-desc { color:rgba(255,255,255,0.78); font-size:12.5px; font-weight:300; line-height:1.55; margin-bottom:14px; max-width:340px; }
+/* Signal */
+.signal-badge {
+  display:inline-flex; align-items:center; gap:7px;
+  background:rgba(0,0,0,0.28); border:1px solid rgba(255,255,255,0.15);
+  border-radius:100px; padding:5px 12px 5px 8px; margin-bottom:16px;
+}
+.sig-dot { width:10px;height:10px;border-radius:50%;background:red;box-shadow:0 0 6px #5FD068;animation:sigpulse 2s ease-in-out infinite; }
+@keyframes sigpulse{0%,100%{box-shadow:0 0 0 0 rgba(220, 115, 45, 0.6);}50%{box-shadow:0 0 0 5px rgba(95,208,104,0);}}
+.signal-badge span { color:rgba(255,255,255,0.82); font-size:12px; font-weight:600; letter-spacing:0.05em; }
 
-.signal-badge { display:inline-flex; align-items:center; gap:7px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.15); border-radius:100px; padding:5px 12px 5px 8px; margin-bottom:16px; }
-.sig-dot { width:7px;height:7px;border-radius:50%;background:#5FD068;box-shadow:0 0 6px #5FD068;animation:sigpulse 2s ease-in-out infinite; }
-@keyframes sigpulse{0%,100%{box-shadow:0 0 0 0 rgba(95,208,104,0.6);}50%{box-shadow:0 0 0 5px rgba(95,208,104,0);}}
-.signal-badge span { color:rgba(255,255,255,0.82); font-size:11.5px; font-weight:600; letter-spacing:0.05em; }
-.hero-silhouette { display:block; width:100%; margin-top:-2px; }
+/* Rock/waterfall SVG silhouette
+.hero-silhouette { display:block; width:100%; margin-top:-2px; }  */
 
-/* Body */
+/* ── BODY ── */
 .body { background:var(--offwhite); }
-.alert-bar { background:var(--alert); padding:10px 20px; display:flex; align-items:flex-start; gap:10px; }
+
+/* Alert bar */
+.alert-bar {
+  background:var(--alert); padding:10px 20px;
+  display:flex; align-items:flex-start; gap:10px;
+}
 .alert-bar svg { flex-shrink:0; margin-top:1px; }
-.alert-bar strong { display:block; color:white; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.09em; margin-bottom:2px; }
-.alert-bar span { color:rgba(255,255,255,0.88); font-size:11.5px; }
+.alert-bar strong { display:block; color:white; font-size:11px; font-weight:700;  ; letter-spacing:0.09em; margin-bottom:2px; }
+.alert-bar span { color:rgba(255,255,255,0.88);  font-size:12px; }
 .alert-bar a { color:#FFD080; font-weight:600; text-decoration:none; }
 
-/* Cultural respect notice */
-.respect-notice {
-  background:rgba(168,50,24,0.07); border-left:3px solid var(--park-accent);
-  padding:10px 16px; margin:12px 20px 0; border-radius:2px;
-  display:flex; align-items:flex-start; gap:9px;
+/* Swimming notice — Wangi-specific */
+.swim-notice {
+  background: rgba(26,122,94,0.08); border-left: 3px solid var(--park-accent);
+  padding: 10px 16px; margin: 0 20px 0;
+  display: flex; align-items: flex-start; gap: 9px;
 }
-.respect-notice p { font-size:12px; color:#444; line-height:1.5; }
-.respect-notice strong { color:var(--park-accent); }
+.swim-notice p { font-size:12px; color:#444; line-height:1.5; }
+.swim-notice strong { color: var(--park-accent); }
 
-/* CTAs */
+/* Primary CTAs */
 .cta-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:14px 20px; }
-.cta-btn { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:15px 10px; border-radius:2px; border:none; cursor:pointer; text-decoration:none; transition:all 0.18s; position:relative; overflow:hidden; }
+.cta-btn {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:6px; padding:15px 10px; border-radius:2px; border:none; cursor:pointer;
+  text-decoration:none; transition:all 0.18s; position:relative; overflow:hidden;
+}
 .cta-btn::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0); transition:background 0.18s; }
 .cta-btn:hover::before { background:rgba(255,255,255,0.09); }
 .cta-btn:active { transform:scale(0.98); }
-.cta-btn.primary { background:var(--park-accent); background-image:linear-gradient(135deg,#5A1008,var(--park-accent)); box-shadow:0 3px 14px rgba(168,50,24,0.4); }
+.cta-btn.primary { background:var(--ochre); background-image:linear-gradient(135deg,var(--rust),var(--ochre)); box-shadow:0 3px 14px rgba(193,68,14,0.35); }
 .cta-btn.secondary { background:var(--dusk); background-image:linear-gradient(135deg,#1e2d3d,var(--dusk)); box-shadow:0 3px 14px rgba(43,58,78,0.3); }
 .cta-icon { width:30px;height:30px;background:rgba(255,255,255,0.14);border-radius:50%;display:flex;align-items:center;justify-content:center; }
-.cta-label { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; color:white; text-transform:uppercase; letter-spacing:0.1em; text-align:center; line-height:1.2; }
+.cta-label { font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700; color:white;  ; letter-spacing:0.1em; text-align:center; line-height:1.2; }
 
+/* Section heading */
 .section-head { padding:6px 20px 8px; display:flex; align-items:center; gap:10px; border-top:1px solid rgba(0,0,0,0.07); margin-top:2px; }
-.section-head span { font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#999; white-space:nowrap; }
+.section-head span { font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.18em;  ; color:#999; white-space:nowrap; }
 .section-head::after { content:''; flex:1; height:1px; background:rgba(0,0,0,0.08); }
 
+/* Link list */
 .link-list { padding:0 20px 4px; display:flex; flex-direction:column; gap:6px; }
-.link-item { display:flex; align-items:center; gap:12px; padding:12px 14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:2px; text-decoration:none; cursor:pointer; transition:all 0.15s; border-left:3px solid transparent; }
+.link-item {
+  display:flex; align-items:center; gap:12px; padding:12px 14px;
+  background:white; border:1px solid rgba(0,0,0,0.07); border-radius:2px;
+  text-decoration:none; cursor:pointer; transition:all 0.15s;
+  border-left:3px solid transparent;
+}
 .link-item:hover { border-left-color:var(--park-accent); box-shadow:0 2px 8px rgba(0,0,0,0.07); transform:translateX(2px); }
 .link-icon { width:34px;height:34px;border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-.li-red   { background:rgba(168,50,24,0.1); }
-.li-blue  { background:rgba(74,127,165,0.12); }
-.li-amber { background:rgba(224,123,26,0.1); }
-.li-dark  { background:rgba(43,58,78,0.1); }
-.li-globe { background:rgba(60,130,80,0.1); }
+.li-green  { background:rgba(26,122,94,0.1); }
+.li-blue   { background:rgba(74,127,165,0.12); }
+.li-amber  { background:rgba(224,123,26,0.1); }
+.li-dark   { background:rgba(43,58,78,0.1); }
+.li-globe  { background:rgba(60,130,80,0.1); }
 .link-text { flex:1; }
 .link-text strong { display:block; font-size:13.5px; font-weight:600; color:#1A1A1A; margin-bottom:1px; }
-.link-text span { font-size:11.5px; color:#888; }
+.link-text span {  font-size:12px; color:black; }
 .link-arrow { color:#ccc; flex-shrink:0; }
 .link-item:hover .link-arrow { color:var(--park-accent); }
-.dl-badge { font-size:9.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:rgba(74,127,165,0.12);color:var(--sky);border-radius:2px;padding:2px 6px; }
+.dl-badge { font-size:9.5px;font-weight:700;letter-spacing:0.08em; ;background:rgba(74,127,165,0.12);color:var(--sky);border-radius:2px;padding:2px 6px; }
 
+/* Terms */
 .terms-section { padding:0 20px 14px; margin-top:6px; }
-.terms-label { font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#999;margin-bottom:7px; }
-.terms-box { background:white; border:1px solid rgba(0,0,0,0.09); border-radius:2px; height:160px; overflow-y:auto; padding:14px 16px; margin-bottom:8px; scroll-behavior:smooth; }
+.terms-label { font-size:10px;font-weight:700;letter-spacing:0.15em; ;color:#999;margin-bottom:7px; }
+.terms-box {
+  background:white; border:1px solid rgba(0,0,0,0.09); border-radius:2px;
+  height:60vw; overflow-y:auto; padding:14px 16px; margin-bottom:8px; scroll-behavior:smooth;
+}
 .terms-box::-webkit-scrollbar { width:3px; }
 .terms-box::-webkit-scrollbar-thumb { background:#D4C4A8; border-radius:3px; }
-.terms-box h4 { font-family:'Barlow Condensed',sans-serif; font-size:12.5px; font-weight:700; color:var(--dusk); text-transform:uppercase; letter-spacing:0.05em; margin:12px 0 5px; }
+.terms-box h4 { font-family:'Barlow Condensed',sans-serif; font-size:12.5px; font-weight:700; color:var(--dusk);  ; letter-spacing:0.05em; margin:12px 0 5px; }
 .terms-box h4:first-child { margin-top:0; }
-.terms-box p { font-size:11.5px; line-height:1.65; color:#666; margin-bottom:8px; }
+.terms-box p {  font-size:12px; line-height:1.65; color:#000; margin-bottom:8px; }
 .terms-box ul { padding-left:16px; margin-bottom:8px; }
-.terms-box li { font-size:11.5px; line-height:1.6; color:#666; margin-bottom:3px; }
+.terms-box li {  font-size:12px; line-height:1.6; color:#000; margin-bottom:3px; }
 .scroll-note { display:flex;align-items:center;justify-content:center;gap:5px;font-size:10.5px;color:#bbb;margin-bottom:12px;transition:opacity 0.3s; }
 
-.accept-row { display:flex; align-items:flex-start; gap:11px; padding:13px 14px; background:white; border:1.5px solid rgba(0,0,0,0.09); border-radius:2px; cursor:pointer; transition:all 0.18s; margin-bottom:12px; }
+/* Accept */
+.accept-row {
+  display:flex; align-items:flex-start; gap:11px; padding:13px 14px;
+  background:white; border:1.5px solid rgba(0,0,0,0.09); border-radius:2px;
+  cursor:pointer; transition:all 0.18s; margin-bottom:12px;
+}
 .accept-row:hover { border-color:#ccc; }
-.accept-row.checked { border-color:var(--park-accent); background:rgba(168,50,24,0.04); }
+.accept-row.checked { border-color:var(--park-accent); background:rgba(26,122,94,0.04); }
 .chk { width:20px;height:20px;border:2px solid #ccc;border-radius:2px;background:white;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all 0.18s; }
 .accept-row.checked .chk { background:var(--park-accent); border-color:var(--park-accent); }
 .chk svg { opacity:0;transform:scale(0.3);transition:all 0.18s; }
@@ -153,31 +211,53 @@ body {
 .accept-row label { font-size:12.5px;color:#444;line-height:1.5;cursor:pointer; }
 .accept-row label strong { color:var(--park-accent); }
 
+/* Buttons */
 .connect-section { padding:0 20px 20px; }
-.btn-connect { width:100%; padding:16px; background:var(--park-accent); background-image:linear-gradient(135deg,#5A1008,var(--park-accent)); color:white; font-family:'Barlow Condensed',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; border:none; border-radius:2px; cursor:pointer; transition:all 0.18s; box-shadow:0 4px 16px rgba(168,50,24,0.4); margin-bottom:8px; }
-.btn-connect:hover:not(:disabled) { box-shadow:0 6px 20px rgba(168,50,24,0.5); transform:translateY(-1px); }
+.btn-connect {
+  width:100%; padding:16px;
+  background:var(--park-accent); background-image:linear-gradient(135deg,#0F4A38,var(--park-accent));
+  color:white; font-family:'Barlow Condensed',sans-serif; font-size:15px;
+  font-weight:700; letter-spacing:0.14em;  ;
+  border:none; border-radius:2px; cursor:pointer; transition:all 0.18s;
+  box-shadow:0 4px 16px rgba(26,122,94,0.4); margin-bottom:8px;
+}
+.btn-connect:hover:not(:disabled) { box-shadow:0 6px 20px rgba(26,122,94,0.5); transform:translateY(-1px); }
 .btn-connect:active:not(:disabled) { transform:translateY(0); }
 .btn-connect:disabled { opacity:0.35; cursor:not-allowed; box-shadow:none; }
-.btn-guest { width:100%; padding:13px; background:transparent; color:#888; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; border:1px solid #ddd; border-radius:2px; cursor:pointer; transition:all 0.18s; }
+.btn-guest {
+  width:100%; padding:13px; background:transparent; color:#888;
+  font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600;
+  letter-spacing:0.1em;  ; border:1px solid #ddd; border-radius:2px; cursor:pointer; transition:all 0.18s;
+}
 .btn-guest:hover { border-color:#bbb; color:#555; }
 .or-divider { display:flex;align-items:center;gap:10px;margin-bottom:8px; }
 .or-divider::before,.or-divider::after { content:'';flex:1;height:1px;background:rgba(0,0,0,0.09); }
 .or-divider span { font-size:10.5px;color:#bbb;font-weight:600;letter-spacing:0.1em; }
 
+/* Footer */
 .portal-footer { background:var(--dusk); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
 .footer-brand { display:flex; align-items:center; gap:8px; }
-.footer-brand span { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:0.1em; }
+.footer-brand span { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; color:rgba(255,255,255,0.55);  ; letter-spacing:0.1em; }
 .footer-links { display:flex; gap:14px; }
 .footer-links a { font-size:10.5px; color:rgba(255,255,255,0.38); text-decoration:none; transition:color 0.15s; }
 .footer-links a:hover { color:#F2A83B; }
 
-.success-overlay { position:absolute; inset:0; background:var(--offwhite); z-index:20; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px 32px; text-align:center; opacity:0; pointer-events:none; transition:opacity 0.4s; }
+/* Success overlay */
+.success-overlay {
+  position:fixed; inset:0; background:var(--offwhite); z-index:20;
+  display:flex; flex-direction:column; justify-content:flex-end; align-items:center; 
+  padding:40px 32px; text-align:center; opacity:0; pointer-events:none; transition:opacity 0.4s;
+}
 .success-overlay.show { opacity:1; pointer-events:all; }
-.success-icon { width:68px;height:68px;background:var(--park-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:22px;animation:popIn 0.5s cubic-bezier(0.22,1,0.36,1) both 0.1s;opacity:0; }
+.success-icon {
+  width:68px;height:68px;background:var(--park-accent);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+  animation:popIn 0.5s cubic-bezier(0.22,1,0.36,1) both 0.1s; opacity:0;
+}
 @keyframes popIn{from{opacity:0;transform:scale(0.4);}to{opacity:1;transform:scale(1);}}
-.success-overlay h2 { font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;text-transform:uppercase;color:var(--dusk);letter-spacing:0.04em;margin-bottom:10px; }
-.success-overlay p { font-size:13.5px;color:#777;line-height:1.6; }
-.dots { font-size:12px;color:#bbb;margin-top:18px; }
+.success-overlay h2 { font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800; ;color:var(--dusk);letter-spacing:0.04em;margin-bottom:10px; }
+.success-overlay p { font-size:13.5px;color:#000;line-height:1.6; }
+.dots { font-size:16px;color:red !important;margin-top:18px; }
 .dots span { animation:blink 1.2s infinite; }
 .dots span:nth-child(2){animation-delay:0.2s;} .dots span:nth-child(3){animation-delay:0.4s;}
 @keyframes blink{0%,80%,100%{opacity:0;}40%{opacity:1;}}
@@ -186,125 +266,171 @@ body {
 <body>
 <div class="card">
 
+  <!-- Success overlay -->
   <div class="success-overlay" id="successOverlay">
     <div class="success-icon">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
     <h2>You're Connected!</h2>
-    <p>Welcome to Karlu Karlu.<br>Please respect this sacred site — stay on marked paths and follow all signage.</p>
-    <p class="dots">Redirecting<span>.</span><span>.</span><span>.</span></p>
+    <p>Welcome to Karlu Karlu.<br>Enjoy the plunge pools and stay safe — always check swimming conditions.</p>
+    <p class="dots">Redirecting<span>.</span><span>.</span><span>.</span><span>.</span></p>
   </div>
 
-  <div class="hero">
-    <div class="hero-inner">
-      <div class="gov-strip">
+  <!-- Hero -->
+  <div class="gov-strip">
         <div class="gov-logo">
-          <span>Logo</span>
+                   <span>Logo here</span>
         </div>
         <div class="pipe"></div>
-        <div class="dept">Parks &amp; Wildlife Commission</div>
+        <div class="dept">Parks &amp; Wildlife </div>
       </div>
+  <div class="hero">
+    <div class="hero-inner">
+      
 
-      <div class="location-crumb">
+     <!--  <div class="location-crumb">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.5 2 5 5 5 9c0 5.5 7 13 7 13s7-7.5 7-13c0-4-3.5-7-7-7Z" stroke="rgba(255,255,255,0.7)" stroke-width="1.8"/></svg>
-        <span>Devils Marbles Conservation Reserve · Central NT</span>
-      </div>
+        <span>Litchfield National Park · Top End, NT</span>
+      </div> -->
 
-      <div class="cultural-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="rgba(232,146,106,0.5)"/><circle cx="12" cy="12" r="9" stroke="rgba(232,146,106,0.6)" stroke-width="1.5"/><circle cx="6" cy="12" r="2" fill="rgba(232,146,106,0.4)"/><circle cx="18" cy="12" r="2" fill="rgba(232,146,106,0.4)"/></svg>
-        <span><strong>Sacred site</strong> of the Kaytetye, Warumungu, Warlpiri &amp; Alyawarr peoples</span>
-      </div>
-
-      <div class="hero-eyebrow">Free Guest Wi-Fi</div>
       <h1 class="hero-title">Karlu Karlu
-        <span class="alt-name">Devils Marbles Conservation Reserve</span>
+        <span>Litchfield National Park</span>
       </h1>
-      <p class="hero-desc">Ancient granite boulders on Darrpa Country. Connect for site information, cultural guides, maps and road conditions on the Stuart Highway.</p>
+      <p class="hero-desc">Welcome to one of the Top End's most iconic waterfalls. Connect for park maps, trail info, campsite bookings and road conditions.</p>
 
       <div class="signal-badge">
         <div class="sig-dot"></div>
-        <span>NT-PARKS-KARLUK · Free Guest Wi-Fi</span>
+        <span>NT-PARKS-WANGI · Free Guest Wi-Fi</span>
       </div>
     </div>
 
-    
+    <!-- Waterfall + tropical rock silhouette 
+    <svg class="hero-silhouette" viewBox="0 0 460 52" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+     Water cascade lines 
+      <path d="M150 0 Q155 20 152 52" stroke="rgba(255,255,255,0.07)" stroke-width="3" fill="none"/>
+      <path d="M160 0 Q162 25 158 52" stroke="rgba(255,255,255,0.05)" stroke-width="2" fill="none"/>
+      Rock cliff base 
+      <path d="M0 52 L0 30 Q20 16 50 26 Q75 34 95 18 Q115 4 140 16 Q158 26 175 10 Q192 0 210 14 Q228 26 248 18 Q265 10 285 20 Q305 30 330 18 Q355 8 380 22 Q405 34 430 20 Q447 10 460 24 L460 52 Z" fill="#FAFAF8"/>
+    Small rock details 
+      <path d="M100 38 Q108 28 118 36" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" fill="none"/>
+      <path d="M310 30 Q322 22 334 30" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" fill="none"/>
+    </svg>-->
   </div>
 
+  <!-- Body -->
   <div class="body">
+
+    <!-- Alert bar -->
     <div class="alert-bar">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 21h20L12 2Z" stroke="white" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5M12 17h.01" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
       <div>
         <strong>Road &amp; Closure Status</strong>
-        <span>Check Stuart Hwy conditions before travelling. <a href="https://ntroads.com.au" target="_blank">NT Road Report →</a></span>
+        <span>Check before you travel. <a href="https://ntroads.com.au" target="_blank">NT Road Report →</a></span>
       </div>
     </div>
 
-    <div class="respect-notice">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px;"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 5v6m0 2v.01" stroke="#A83218" stroke-width="2" stroke-linecap="round"/></svg>
-      <p><strong>Cultural respect required.</strong> Karlu Karlu is a sacred site. Please do not climb on the rocks. Stay on marked paths. Sunrise and sunset photography is welcomed — please be respectful of other visitors and this Country.</p>
+    <!-- Wangi-specific swimming notice -->
+    <div class="swim-notice" style="margin-top:12px; border-radius:2px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px;"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 5v6m0 2v.01" stroke="#1A7A5E" stroke-width="2" stroke-linecap="round"/></svg>
+      <p><strong>Swimming conditions</strong> at Karlu Karlu pool are assessed daily. Check the noticeboard at the car park before entering the water. Pool may be closed due to crocodile activity or weather.</p>
     </div>
 
+    <!-- Primary CTAs -->
     <div class="cta-grid">
-      <a class="cta-btn primary" href="https://nt.gov.au/leisure/parks-reserves/pay-for-a-parks-pass" target="_blank">
-        <div class="cta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="white" stroke-width="2"/><path d="M2 10h20" stroke="white" stroke-width="2"/><path d="M6 15h4" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <a class="cta-btn primary" href="https://parkbookings.nt.gov.au/Web/Passes/Passes.aspx" target="_blank">
+        <div class="cta-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="white" stroke-width="2"/><path d="M2 10h20" stroke="white" stroke-width="2"/><path d="M6 15h4" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
         <span class="cta-label">Buy a Parks Pass</span>
       </a>
-      <a class="cta-btn secondary" href="https://nt.gov.au/parks" target="_blank">
-        <div class="cta-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="white" stroke-width="2"/><polyline points="9,22 9,12 15,12 15,22" stroke="white" stroke-width="2"/></svg></div>
-        <span class="cta-label">Park Info</span>
+      <a class="cta-btn secondary" href="https://parkbookings.nt.gov.au/Web/" target="_blank">
+        <div class="cta-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M8 14h2v2H8z" fill="white"/></svg>
+        </div>
+        <span class="cta-label">Book Campsite</span>
       </a>
     </div>
 
-    <div class="section-head"><span>Site Information</span></div>
+    <!-- Park Info -->
+    <div class="section-head"><span>Park Information</span></div>
     <div class="link-list">
-      <a class="link-item" href="https://nt.gov.au/parks/find-a-park/karlu-karlu-devils-marbles-conservation-reserve" target="_blank">
-        <div class="link-icon li-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.5 2 5 5 5 9c0 5.5 7 13 7 13s7-7.5 7-13c0-4-3.5-7-7-7Z" stroke="#A83218" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke="#A83218" stroke-width="1.8"/></svg></div>
-        <div class="link-text"><strong>Karlu Karlu — Site Access Status</strong><span>Check if the reserve is open · NT.gov.au</span></div>
+      <a class="link-item" href="https://nt.gov.au/parks/find-a-park/litchfield-national-park" target="_blank">
+        <div class="link-icon li-green">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.5 2 5 5 5 9c0 5.5 7 13 7 13s7-7.5 7-13c0-4-3.5-7-7-7Z" stroke="#1A7A5E" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke="#1A7A5E" stroke-width="1.8"/></svg>
+        </div>
+        <div class="link-text"><strong>Karlu Karlu — Park Access Status</strong><span>Check if the park is open · NT.gov.au</span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
-      <a class="link-item" href="https://nt.gov.au/_media/docs/parks/find-a-park-to-visit/barkly-and-tenant-creek/karlu-karlu-devils-marbles-fact-sheet-and-map.pdf" target="_blank">
-        <div class="link-icon li-blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#4A7FA5" stroke-width="1.8"/><path d="M7 8h10M7 12h10M7 16h6" stroke="#4A7FA5" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-        <div class="link-text"><strong>Karlu Karlu fact sheet and map</strong><span>Visitor &amp; cultural guide <span class="dl-badge">PDF</span></span></div>
+      <a class="link-item" href="https://nt.gov.au/_media/docs/parks/find-a-park-to-visit/darwin-region/litchfield-national-park/litchfield-national-park-short-walks-information-sheet.pdf" target="_blank">
+        <div class="link-icon li-blue">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#4A7FA5" stroke-width="1.8"/><path d="M7 8h10M7 12h10M7 16h6" stroke="#4A7FA5" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div class="link-text"><strong>Karlu Karlu information sheet</strong><span>Visitor guide, trails &amp; facilities <span class="dl-badge">PDF</span></span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
-  </div>
+      <a class="link-item" href="https://nt.gov.au/_media/docs/parks/find-a-park-to-visit/darwin-region/litchfield-national-park/litchfield-national-park-short-walks-information-sheet.pdf" target="_blank">
+        <div class="link-icon li-amber">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="16" rx="2" stroke="#E07B1A" stroke-width="1.8"/><circle cx="12" cy="11" r="3" stroke="#E07B1A" stroke-width="1.5"/><path d="M5 7l3 2M19 7l-3 2M5 15l3-2M19 15l-3-2" stroke="#E07B1A" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="link-text"><strong>Litchfield National Park Map</strong><span>Trails, waterfalls &amp; campgrounds <span class="dl-badge">PDF</span></span></div>
+        <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+    </div>
 
+    <!-- Resources & Safety -->
     <div class="section-head" style="margin-top:10px;"><span>Resources &amp; Safety</span></div>
     <div class="link-list" style="margin-bottom:14px;">
-      <a class="link-item" href="https://roadreport.nt.gov.au/home" target="_blank">
-        <div class="link-icon li-amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v5" stroke="#E07B1A" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="17" r="3" stroke="#E07B1A" stroke-width="1.8"/><path d="M10 17H9" stroke="#E07B1A" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-        <div class="link-text"><strong>NT Road Report</strong><span>Stuart Highway &amp; regional conditions</span></div>
+      <a class="link-item" href="https://ntroads.com.au" target="_blank">
+        <div class="link-icon li-amber">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v5" stroke="#E07B1A" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="17" r="3" stroke="#E07B1A" stroke-width="1.8"/><path d="M10 17H9" stroke="#E07B1A" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div class="link-text"><strong>NT Road Report</strong><span>Live conditions &amp; closures</span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
       <a class="link-item" href="https://securent.nt.gov.au" target="_blank">
-        <div class="link-icon li-dark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 4.5 3.5 8.7 8 10 4.5-1.3 8-5.5 8-10V6L12 2Z" stroke="#2B3A4E" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div class="link-icon li-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 4.5 3.5 8.7 8 10 4.5-1.3 8-5.5 8-10V6L12 2Z" stroke="#2B3A4E" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </div>
         <div class="link-text"><strong>SecureNT</strong><span>Emergency &amp; safety information</span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
       <a class="link-item" href="https://northernterritory.com" target="_blank">
-        <div class="link-icon li-globe"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#3C8250" stroke-width="1.8"/><path d="M3 12h18M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9" stroke="#3C8250" stroke-width="1.4"/></svg></div>
-        <div class="link-text"><strong>NorthernTerritory.com</strong><span>Explore more of the Territory</span></div>
+        <div class="link-icon li-globe">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path id="tntlogo-sun" fill="url(#tntlogo-gradient)" d="M128.5 47.9c-.1-.2-.1-.5-.1-.8s-.1-.5-.1-.8v-.9c0-.3 0-.2.1-.3.1-.7 0-1.6 0-1.9s0-.6-.2-1.1c0-.1 0-.3-.1-.4-.2-.6-.3-1.4-.4-2.2l-.3-1.2c-.1-.4-.3-.8-.5-1.3-.5-1.3-.8-1.6-1.2-2.6-.1-.2-.1-.4-.2-.5 0-.2-.1-.9-.4-1.6.1.1-.4-.6-.4-.6-.4-1-1.3-3-1.5-4-.4-1.9-1.3-3.2-1.3-3.2l-.1-.3c0-.1-.1-.4-.4-1.1-.2-.3-.4-.7-.7-1l-.1-.4c.1.3.1.1-.2-.3 0-.1 0-.3-.1-.5-.2-.3-.6-.7-1.1-1.4-.2-.5 0-.4-.5-1 0-.1-.6-1.1-.9-1.3-.2-.6-1.1-1.6-.9-1.7-.1-.1-2.7-3.4-3.2-4-.5-.5-2.6-2.6-2.9-2.8-.3-.2-.7-.5-.9-.6-.6-.7-1.8-1.9-2.4-2.1-.7-.7-1.1-.9-1.3-1-1.1-.7-.4-.4-.8-.8-.7-.4-1.4-.5-1.9-.8l-1.6-.8c-.6-.3-1.3-.5-1.8-.6-.1 0-1.1-.2-1.1-.2-.4-.3-.3-.2-.8-.3-.5-.1-1-.2-1.3-.3-.1-.1-1.3-.5-1.6-.5-1.1-.1-1.5-.3-1.9-.4s-.6-.3-1.5-.2c-.4.1-.6.3-1.8.1 0 0-.6-.1-.8-.1-.2.1-2-.1-2-.1-1.6.1-4.8.4-5.2.5-1.1.2-2.3.4-3.5.6l-1.8.3c-.6.1-1.1.2-1.7.3 0 0-2 .7-1.7.6-.7.2-1.7.7-2.7 1.1-1 .4-2 .8-2.8 1 0 0-.9.7-2 1 0 0-4.8 2.5-6.6 3.4-.1.2-.7.5-1.2.9-.5.3-1.9 1.4-2.2 1.5s-.7.4-1.6 1c-.5.3-.5.7-1.1 1.2l-.1-.1S52 14.4 52 14.5c-.7.8-1.9 1.7-2 1.7l-1.5 1.9c0-.1-.5.5-.5.6-.5.4-1.9 2.1-1.9 2.1-.3.4-.6.7-.9 1.1-.3.4-.6.8-.8 1.2-.3.4-.6.8-.8 1.3-.3.4-1.4 2.5-1.5 2.4-.1.4-.9 1.4-1 1.9H41c-.9 1.9-1.2 2.7-1.8 4.3.1.1-.2.7-.2 1.2-.4 1.2-1 2.4-1.3 3.9-.2 1-.7 2.9-.8 3.6-.1.6-.3 3-.3 2.9v-.1c0 1.3-.3 2.7-.4 4.1-.2 1.4-.2 2.7 0 3.7v-.1l.3 2.1c.1 1-.1.7 0 .9 0 .2.1.5.1.7.1.5.1.9.2 1.3.1.8.3 1.6.5 2.5-.1.8.3 2 .7 3.3.2.6.5 1.3.7 1.9l.3.9c.1.3.3.6.3.6.2.3.1.3.2.5.9 1.9 1.9 3.9 3.1 5.8 1.2 1.9 2.5 3.7 4 5.3 1.1 1.2.9.4 2.2 1.9 0 0 2 1.8 3.3 2.8.7.5 1.3 1 2 1.4.7.4 1.4.9 2.1 1.2-.2-.1.3.3.8.6.5.2.9.4.9.4.4.2.1.1.3.3.6.4 2.2 1.1 2.6 1.2.4.2 1.5.6 2 .8s1 .3 1.4.5c.6.1 1.9.7 2.2.6-.1.1.4.3 1 .4.6.2 1.3.3 1.7.3-.3 0 1.9.5 1.8.4.8.3 1.5.4 2.2.4.7.1 1.3.1 1.7.3 2.5.1 4.9.1 7.1-.2 0 .1 1-.1 3.1-.3.6-.1 5.3-1.1 5.1-1 .4-.1 3.3-1.2 3.2-1.2.3-.1.9-.4 2-.8 0 .1.8-.4 1.7-.8 0 .1 1.3-.6 1.9-1 .7-.4 3.4-1.9 3.4-1.9.8-.5 1.4-1 2.1-1.4 0 0-.2-.2.9-.8-.2.2.8-.5 1.2-.7.3-.3.7-.7 1.2-1 .2-.1 1.8-1.2 2.1-1.7-.1.2.2-.2 1.4-1.1-.1.1.9-.7 1.4-1.2l1.5-1.5c.4-.2.3-.1.7-.4s.7-.8 1-1.2c.7-.8 1.7-2 1.7-2 0-.2.2-.4.6-.8.4-.4.7-.7 1-1.1-.1.2 1.6-1.9 2.7-3.6l1.7-2.6c.4-.5.8-1 1.1-1.6s.6-1.1.8-1.7c.1-.3.2-.6.4-.8.1-.3.2-.6.3-.8.2-.6.5-1.1.8-1.6l.2-1.1c.2-.4.4-1.4.4-1.4.4-1 .4-2.5.5-3.1.2-.2.1-.2.1-.6s0-.8.1-1.1l.3-1.5z"></path> </svg>
+        </div>
+        <div class="link-text"><strong>northernterritory.com</strong><span>Explore more of the Territory</span></div>
         <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
     </div>
 
+    <!-- Terms -->
     <div class="terms-section">
-      <div class="terms-label">Terms of Use — Guest Wi-Fi</div>
+      <div class="terms-label">Terms of use — Guest wi-fi</div>
       <div class="terms-box" id="termsBox">
-        <h4>1. Service Overview</h4>
-        <p>The NT Parks &amp; Wildlife Guest Wi-Fi ("Network") at Karlu Karlu / Devils Marbles Conservation Reserve is provided by the Parks and Wildlife Commission of the Northern Territory for park visitors. By connecting you agree to these Terms of Use.</p>
-        <h4>2. Permitted Use</h4>
-        <p>This Network is for visitor use only. Permitted activities include accessing park and cultural site information, maps and fact sheets; purchasing a Parks Pass; checking road and closure conditions; and general web browsing.</p>
-        <h4>3. Prohibited Activities</h4>
-        <p>You must not use this Network to engage in unlawful, harmful or fraudulent activity; download or share illegal content; conduct large file transfers or peer-to-peer sharing; or attempt to access or disrupt the Network or other users.</p>
-        <h4>4. Availability &amp; Liability</h4>
-        <p>The Network is provided "as is". The Commission does not guarantee availability, speed or security and accepts no liability for loss or damage from Network use.</p>
-        <h4>5. Privacy &amp; Data Collection</h4>
-        <p>Connection activity may be logged for network management and analytics in accordance with NT and Commonwealth legislation. By connecting you consent to this collection.</p>
-        <h4>6. Security</h4>
-        <p>This is a public Wi-Fi network. Connect at your own risk. We recommend using a VPN and keeping your device security up to date.</p>
-        <h4>7. Governing Law</h4>
-        <p>These terms are governed by the laws of the Northern Territory of Australia.</p>
+       <p>
+Welcome to the Parks and Wildlife NT Guest WiFi. By selecting "Accept" or "Get Online," you agree to be bound by these terms. This service is provided by the Northern Territory Government (NTG) as a free public amenity.
+
+  <ol>
+<li><strong>Access and use</strong><br>
+Availability: The service is provided "as is" and may be unavailable at certain times due to maintenance, power outages, or operational requirements.
+Usage Limits: Access may be subject to data volume or time limits to ensure fair use for all visitors.
+Security: This is an open, non-secure network. You are responsible for maintaining your own device security, including up-to-date antivirus and firewall software.
+</li>
+<li><strong>Prohibited Activities</strong><br>
+You must not use this service for:
+Illegal Acts: Any criminal or defamatory activity.
+High-Volume Use: Sustained high-volume data transfers or hosting server equipment.
+Inappropriate Content: Accessing or distributing material that is offensive, obscene, or infringing on intellectual property rights.
+Harmful Software: Introducing viruses, malware, or attempting to undermine network integrity.
+</li>
+<li><strong>Privacy and Data Collection</strong><br>
+By using this service, you consent to the collection of certain data (such as device MAC addresses and connection logs) to help manage the network and improve tourism services. All personal information is handled in accordance with the NT Information Act and the NTG Privacy Policy.
+</li>
+<li><strong>Limitation of liability and security</strong><br>
+The Northern Territory Government and its partners (including Encapto) are not liable for any loss of data, unauthorized access to your device, or damages resulting from your use of this service.
+</li>
+</ol>  
+</p>
         <p style="font-size:10.5px;color:#bbb;margin-top:14px;">Parks and Wildlife Commission NT · Terms updated March 2025 · Subject to legal review.</p>
       </div>
       <div class="scroll-note" id="scrollNote">
@@ -312,26 +438,29 @@ body {
         Scroll to read full terms
       </div>
       <div class="accept-row" id="acceptRow" onclick="toggleAccept()">
-        <div class="chk"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="chk" id="chkBox">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
         <label>I have read and agree to the <strong>Terms of Use</strong> for the NT Parks &amp; Wildlife Guest Wi-Fi network.</label>
       </div>
     </div>
 
+    <!-- Connect -->
     <div class="connect-section">
-      <button class="btn-connect" id="btnConnect" disabled onclick="doConnect()">Accept &amp; Connect to Wi-Fi</button>
-      <div class="or-divider"><span>or</span></div>
-      <button class="btn-guest" onclick="doGuest()">Continue as Guest (Limited Access)</button>
+      <button class="btn-connect" id="btnConnect" disabled onclick="doConnect()">Connect to Wi-Fi</button>
+      <!--<div class="or-divider"><span>or</span></div>
+      <button class="btn-guest" onclick="doGuest()">Continue as Guest (Limited Access)</button> -->
     </div>
   </div>
 
+  <!-- Footer -->
   <div class="portal-footer">
     <div class="footer-brand">
-      <svg width="16" height="16" viewBox="0 0 28 34" fill="none"><path d="M2 0h24v24l-12 10L2 24V0Z" fill="rgba(255,255,255,0.18)"/><path d="M14 5v14M8 10h12" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/></svg>
       <span>Parks &amp; Wildlife Commission NT</span>
     </div>
     <div class="footer-links">
-      <a href="https://nt.gov.au/parks">NT.gov.au/parks</a>
-      <a href="https://northernterritory.com">NT.com</a>
+      <a href="https://nt.gov.au/parks">Parks and reserves website</a>
+      <a href="https://northernterritory.com">Visit the NT</a>
     </div>
   </div>
 </div>
@@ -346,7 +475,7 @@ body {
     document.getElementById('acceptRow').classList.toggle('checked', accepted);
     document.getElementById('btnConnect').disabled = !accepted;
   }
-  function doConnect(){ if(!accepted) return; document.getElementById('successOverlay').classList.add('show'); }
+  function doConnect(){ if(!accepted) return; document.getElementById('successOverlay').classList.add('show'); setTimeout(() => { window.location.href = 'https://northernterritory.com/promotions/wifi/wangi'; }, 3000); }
   function doGuest(){
     const o = document.getElementById('successOverlay');
     o.querySelector('p').textContent = 'Connected with limited access. Accept the Terms of Use for full park services.';
