@@ -46,7 +46,13 @@ body {
 
 /* ── HERO ── */
 .hero {
-  background: var(--park-accent);
+  background-image: url(https://a.storyblok.com/f/286255898790625/5164x3867/b84e3f4997/arial-view-of_wangi_falls_in_litchfield.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;  
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
 }
 .hero::before {
   content:'';
@@ -94,19 +100,19 @@ body {
 }
 .hero-title {
   font-family:'Barlow Condensed',sans-serif; font-size:clamp(32px,8vw,44px);
-  font-weight:800; color:white;  ;
+  padding: 10px; font-weight:800; color:white; background:rgba(2, 1, 1, 0.468); ;
   letter-spacing:0.03em; line-height:0.95; margin-bottom:6px;
 }
-.hero-title span { display:block; font-size:clamp(14px,3vw,18px); font-weight:400; color:white; letter-spacing:0.08em; margin-top:4px; }
+.hero-title span { padding: 10px; display:block; font-size:clamp(14px,3vw,18px); font-weight:400; color:white; letter-spacing:0.08em; margin-top:4px; background: rgba(2, 1, 1, 0.468); }
 .hero-desc {
-  color:white; font-size:12.5px; font-weight:300;
-  line-height:1.55; margin-bottom:14px; max-width:340px;
+  color:white; font-size:12.5px; font-weight:300; background: rgba(2, 1, 1, 0.468);
+  line-height:1.55; margin-bottom:14px; max-width:340px; padding: 10px;
 }
 
 /* Signal */
 .signal-badge {
   display:inline-flex; align-items:left; gap:7px;
-  background:rgba(0,0,0,0.28); border:1px solid rgba(255,255,255,0.15);
+  background:var(--park-accent); border:1px solid rgba(255,255,255,0.15);
   border-radius:0px; padding:20px; margin-bottom:6px;
 }
 .sig-dot { width:15px;height:15px;border-radius:50%;background:red;box-shadow:0 0 6px #5FD068;animation:sigpulse 2s ease-in-out infinite; }
