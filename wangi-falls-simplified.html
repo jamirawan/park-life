@@ -6,6 +6,8 @@
 <title>Wangi Falls — NT Parks Guest Wi-Fi</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+
+
 :root {
   --ochre:   #C1440E;
   --rust:    #9B3409;
@@ -16,11 +18,14 @@
   --teal:    #1E6B6B;
   --offwhite:#FAFAF8;
   --alert:   #D64000;
+  --parks-orange: #BC5915; 
   /* Wangi accent — lush tropical green-teal for Top End waterfall country */
   --park-accent: #1A7A5E;
   --park-mid:    #25A07A;
   --park-light:  #4DC4A0;
 }
+
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   min-height: 100vh;
@@ -32,6 +37,10 @@ body {
   font-family: 'Barlow', sans-serif;
   display: flex; align-items: flex-start; justify-content: center;
   padding: 20px 16px 40px; overflow-x: hidden;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
 }
 
 /* ── CARD ── */
@@ -50,7 +59,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;  
-  height: 100vh;
+  height: 70vh;
   display: flex;
   justify-content: space-between;
 }
@@ -72,18 +81,22 @@ body {
 .hero-inner { padding: 28px 28px 12px; position: relative; z-index: 1; }
 
 /* NT Gov strip */
-.gov-strip { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
-.gov-logo {
-  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+.parks-strip { background: white; display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.parks-logo {
+  background: white; max-height:80px; border: 1px solid rgba(255,255,255,0.22);
   border-radius: 2px; padding: 4px 10px;
   display:flex; align-items:center; gap:6px;
 }
-.gov-logo span {
-  color: white; font-family:'Barlow Condensed',sans-serif;
+.parks-logo span {
+  max-height: 80px; color: white; font-family:'Barlow Condensed',sans-serif;
   font-size:2rem; font-weight:700; letter-spacing:0.12em;  ;
 }
-.gov-strip .pipe { width:1px; height:16px; background:rgba(255,255,255,0.25); }
-.gov-strip .dept { color:rgba(255,255,255,0.7); font-size:10.5px; letter-spacing:0.05em; }
+
+.parks-logo span img {
+  max-height: 80px; padding: 1px;
+}
+.parks-strip .pipe { width:1px; height:16px; background:white }
+.parks-strip .dept { color:var(--parks-orange); font-size:1.5rem; letter-spacing:0.05em; }
 
 /* Location crumb */
 .location-crumb {
@@ -99,7 +112,7 @@ body {
   letter-spacing:0.18em; text-transform:none; margin-bottom:5px;
 }
 .hero-title {
-  font-family:'Barlow Condensed',sans-serif; font-size:clamp(32px,8vw,44px);
+  font-family:'Barlow Condensed',sans-serif; font-size:clamp(32px,8vw,44px); margin-bottom: 20px;
   padding: 10px; font-weight:800; color:white; background:rgba(2, 1, 1, 0.468); ;
   letter-spacing:0.03em; line-height:0.95; margin-bottom:6px;
 }
@@ -275,6 +288,34 @@ body {
 .dots span { animation:blink 1.2s infinite; }
 .dots span:nth-child(2){animation-delay:0.2s;} .dots span:nth-child(3){animation-delay:0.4s;}
 @keyframes blink{0%,80%,100%{opacity:0;}40%{opacity:1;}}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+.faq {
+  padding: 20px;
+}
 </style>
 </head>
 <body>
@@ -291,9 +332,9 @@ body {
   </div>
 
   <!-- Hero -->
-  <div class="gov-strip">
-        <div class="gov-logo">
-                   <span>Logo here</span>
+  <div class="parks-strip">
+        <div class="parks-logo">
+                   <span><img src="/park-1/parks-wildlife-logo.png"></span>
         </div>
         <div class="pipe"></div>
         <div class="dept">Parks &amp; Wildlife </div>
@@ -316,6 +357,8 @@ body {
         <div class="sig-dot"></div>
         <span><a href="#acceptRow">Connect to Wifi</a></span>
       </div>
+
+      
     </div>
 
     <!-- Waterfall + tropical rock silhouette 
@@ -333,8 +376,24 @@ body {
 
   <!-- Body -->
   <div class="body">
+<section class="faq">
+    <h2>Frequently asked information</h2>
 
-    
+<button class="accordion">Question 1</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Question 2</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Question 3</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</section>
     <!-- Terms -->
     <div class="terms-section">
       <h2>Terms of use — Guest wi-fi</h2>
@@ -425,6 +484,23 @@ The Northern Territory Government and its partners (including Encapto) are not l
     o.querySelector('p').textContent = 'Connected with limited access. Accept the Terms of Use for full park services.';
     o.classList.add('show');
   }
+</script>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
 </script>
 </body>
 </html>
