@@ -247,7 +247,7 @@ dialog {
   left: 0;
   z-index: 1;
   color: white;
-  background: rgba(2, 1, 1, 0.368);
+  background: rgba(2, 1, 1, 0.585);
   margin: 1rem;
   max-width: 480px;
 }
@@ -443,6 +443,21 @@ main {
   color: var(--parks-orange);
 }
 
+/* Accept */
+.accept-row {
+  display:flex; align-items:flex-start; gap:11px; padding:13px 14px;
+  background:white; border:1.5px solid rgba(0,0,0,0.09); border-radius:2px;
+  cursor:pointer; transition:all 0.18s; margin-bottom:12px;
+}
+.accept-row:hover { border-color:#ccc; }
+.accept-row.checked { border-color:var(--park-accent); background:rgba(26,122,94,0.04); }
+.chk { width:20px;height:20px;border:2px solid #ccc;border-radius:2px;background:white;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all 0.18s; }
+.accept-row.checked .chk { background:var(--park-accent); border-color:var(--park-accent); }
+.chk svg { opacity:0;transform:scale(0.3);transition:all 0.18s; }
+.accept-row.checked .chk svg { opacity:1;transform:scale(1); }
+.accept-row label { font-size:12.5px;color:#444;line-height:1.5;cursor:pointer; }
+.accept-row label strong { color:var(--park-accent); }
+
 .accept-row label { font-size:12.5px;color:#444;line-height:1.5;cursor:pointer; }
 .accept-row label strong { color:var(--park-accent); }
 
@@ -471,7 +486,7 @@ main {
 
 /* Success overlay */
 .success-overlay {
-  position:fixed; inset:0; background:var(--offwhite); z-index:20;
+  position:fixed; inset:0; background:var(--offwhite); z-index:999;
   display:flex; flex-direction:column; justify-content:flex-end; align-items:center; 
   padding:40px 32px; text-align:center; opacity:0; pointer-events:none; transition:opacity 0.4s;
 }

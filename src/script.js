@@ -7,7 +7,10 @@
     document.getElementById('acceptRow').classList.toggle('checked', accepted);
     document.getElementById('btnConnect').disabled = !accepted;
   }
-  function doConnect(){ if(!accepted) return; document.getElementById('successOverlay').classList.add('show'); setTimeout(() => { window.location.href = 'https://northernterritory.com/promotions/wifi/wangi'; }, 3000); }
+  function doConnect(){ if(!accepted) return; 
+    document.getElementById('getonline').close();
+    /* document.getElementById('successOverlay').classList.add('show'); 
+    setTimeout(() => { window.location.href = 'https://northernterritory.com/promotions/wifi/wangi'; }, 3000); } */
   function doGuest(){
     const o = document.getElementById('successOverlay');
     o.querySelector('p').textContent = 'Connected with limited access. Accept the Terms of Use for full park services.';

@@ -16,9 +16,9 @@
     <div class="success-icon">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
-    <h2>You're connected!</h2>
+    <h2>You're now connected!</h2>
     <p>Welcome to Wangi Falls.<br>Enjoy the plunge pools and stay safe — always check swimming conditions.</p>
-    <p class="dots">Redirecting<span>.</span><span>.</span><span>.</span><span>.</span></p>
+    <p class="dots">Redirecting to northernterritory.com<span>.</span><span>.</span><span>.</span><span>.</span></p>
   </div>
 
   <header>
@@ -38,11 +38,16 @@
         <label class="getonline__survey__label" for="email">Email address <span class="getonline__survey__hint">(optional)</span></label>
         <input class="getonline__survey__input getonline__email" type="email" name="email" id="email" placeholder="you@example.com" />
       </div>
-
-      <div class="getonline__survey__field">
+      <div class="accept-row" id="acceptRow" onclick="toggleAccept()">
+        <div class="chk" id="chkBox">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <label>I have read and agree to the <strong>Terms of Use</strong> for the NT Parks &amp; Wildlife Guest Wi-Fi network.</label>
+      </div>
+      <!-- <div class="getonline__survey__field">
         <input class="getonline__survey__checkbox" type="checkbox" id="accept__checkbox" onclick="toggleAccept()" />
         <label class="getonline__survey__checkbox__label" for="accept__checkbox">I have read and agree to the <strong>Terms of use</strong> for the NT Parks &amp; Wildlife Guest Wi-Fi network.</label>
-      </div>
+      </div>-->
     </div>        
     
         <button class="accept__readtermsbutton" command="show-modal" commandfor="terms">Read terms of use</button>
