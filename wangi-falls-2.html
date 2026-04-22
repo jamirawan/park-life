@@ -11,6 +11,15 @@
   </head>
   <body>
 <div class="content">  
+<!-- Success overlay -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h2>You're connected!</h2>
+    <p>Welcome to Wangi Falls.<br>Enjoy the plunge pools and stay safe — always check swimming conditions.</p>
+    <p class="dots">Redirecting<span>.</span><span>.</span><span>.</span><span>.</span></p>
+  </div>
 
   <header>
     <div class="logo">
@@ -37,8 +46,8 @@
     </div>        
     
         <button class="accept__readtermsbutton" command="show-modal" commandfor="terms">Read terms of use</button>
-
-    <button class="getonline__continuebutton" data-name="forwardButton" type="button">Continue</button>
+<button class="btn-connect" id="btnConnect" disabled onclick="doConnect()">Continue</button>
+   <!-- <button class="getonline__continuebutton" data-name="forwardButton" type="button" id="btnConnect" disabled onclick="doConnect()">Continue</button>-->
 
     <button class="dialog__closebutton" commandfor="getonline" command="close" title="Close" aria-label="Close">×</button>
     
@@ -244,6 +253,39 @@
     <p class="dots">Redirecting<span>.</span><span>.</span><span>.</span><span>.</span></p>
   </dialog>
     
-    <script src="./script.js"></script>
+   <script>
+  document.getElementById('termsBox').addEventListener('scroll', function(){
+    document.getElementById('scrollNote').style.opacity = this.scrollTop > 20 ? '0' : '1';
+  });
+  let accepted = false;
+  function toggleAccept(){
+    accepted = !accepted;
+    document.getElementById('acceptRow').classList.toggle('checked', accepted);
+    document.getElementById('btnConnect').disabled = !accepted;
+  }
+  function doConnect(){ if(!accepted) return; document.getElementById('successOverlay').classList.add('show'); setTimeout(() => { window.location.href = 'https://northernterritory.com/promotions/wifi/wangi'; }, 3000); }
+  function doGuest(){
+    const o = document.getElementById('successOverlay');
+    o.querySelector('p').textContent = 'Connected with limited access. Accept the Terms of Use for full park services.';
+    o.classList.add('show');
+  }
+</script>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
   </body>
 </html>
