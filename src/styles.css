@@ -427,14 +427,14 @@ main {
 }
 
 .accept__readtermsbutton {
-  background: none;
+  background: var();
   display: inline;
   font-weight: bold;
   border: 0;
-  padding: 0;
-  margin: 0;
+  padding: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
-  color: var(--parks-brown);
+  color: var(--offwhite);
 }
 
 .accept__readtermsbutton:hover,
