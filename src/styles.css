@@ -523,6 +523,8 @@ summary {
 }
 
 summary::marker { 
+  content: "▶   "; 
+  color: var(--alert)
 }
 
 .active,
