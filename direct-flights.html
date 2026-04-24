@@ -36,7 +36,7 @@
     .hero__content {
       position: relative;
       z-index: 1;
-      display: flex;
+      display: block;
       align-items: center;
       gap: 8px;
     }
@@ -84,6 +84,10 @@
     <div class="hero__overlay"></div>
  
     <div class="hero__content">
+       <div style="color: yellow;"><h1> Fly direct to Darwin</h1>
+        <p>Location</p>
+        </div> 
+        <div>
       <select name="options" id="options">
         <option value="Sydney">Sydney - Darwin</option>
         <option value="Melbourne">Melbourne - Darwin</option>
@@ -92,7 +96,8 @@
         <option value="Perth">Perth - Darwin</option>
         <option value="Adelaide">Adelaide - Darwin</option>
       </select>
-      <button onclick="window.open('.com.au/destinations/northernterritory/', '_blank')">Apply</button>
+      <button onclick="window.open('https://www.webjet.com.au/destinations/northernterritory', '_blank')">Book now</button>
+    </div>
     </div>
  
   </section>
