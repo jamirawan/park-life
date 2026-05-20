@@ -43,8 +43,7 @@
       <div class="getonline__survey">
 
         <div class="getonline__survey__field">
-          <label class="getonline__survey__label" for="email">Email address <span
-              class="getonline__survey__hint">(optional)</span></label>
+          <label class="getonline__survey__label" for="email">Email address</label>
           <input class="getonline__survey__input getonline__email" type="email" name="email" id="email"
             placeholder="you@example.com" />
         </div>
@@ -58,6 +57,15 @@
           </div>
           <label>I have read and agree to the <strong>Terms of Use</strong> for the NT Parks &amp; Wildlife Guest Wi-Fi
             network.</label>
+        </div>
+        <div class="accept-row" id="acceptRow2" onclick="toggleAccept2()">
+          <div class="chk" id="chkBox">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
+              <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <label>I have read and agree to the <a href="https://northernterritory.com/find-out-more/privacy">privacy policy</a></label>
         </div>
         <!-- <div class="getonline__survey__field">
         <input class="getonline__survey__checkbox" type="checkbox" id="accept__checkbox" onclick="toggleAccept()" />
