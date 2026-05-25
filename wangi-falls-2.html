@@ -48,6 +48,7 @@
             placeholder="you@example.com" />
         </div>
         <button class="accept__readtermsbutton" command="show-modal" commandfor="terms">Read the Terms of Use</button>
+        <button class="accept__readprivacybutton" command="show-modal" commandfor="privacy">Read Privacy Policy</button>
         <div class="accept-row" id="acceptRow" onclick="toggleAccept()">
           <div class="chk" id="chkBox">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
@@ -65,7 +66,7 @@
                 stroke-linejoin="round" />
             </svg>
           </div>
-          <label>I have read and agree to the <a href="https://northernterritory.com/find-out-more/privacy">privacy policy</a></label>
+          <label>I have read and agree to the <strong>Privacy Policy</strong> for the NT Parks &amp; Wildlife Guest Wi-Fi network.</label>
         </div>
         <!-- <div class="getonline__survey__field">
         <input class="getonline__survey__checkbox" type="checkbox" id="accept__checkbox" onclick="toggleAccept()" />
@@ -380,6 +381,33 @@ To the maximum extent permitted by law, we are not liable for any loss or damage
           </ul>
           </li>
         </ol>
+
+        <small>Parks and Wildlife Commission NT · Terms updated March 2026 · Subject to legal review.</small>
+
+      </div>
+
+      <button class="dialog__closebutton" commandfor="terms" command="close" title="Close" aria-label="Close">×</button>
+
+    </dialog>
+    <!-- Privacy Policy Dialog -->
+    <dialog class="privacy" id="privacy" closedby="any">
+
+      <h2>Privacy Policy</h2>
+      <h3>Your personal information</h3>
+      <p>The Northern Territory Information Act (the Act) provides the community rights to access government information, including personal information, The Act also safeguards the privacy of personal information held by the relevant organisations and ensures that organisations collect and handle personal information responsibly.</p>
+      <p>In the Act, Personal Information is any information a public sector organisation holds from which a person’s identity is apparent or is reasonably able to be ascertained. Tourism NT is committed to protecting your personal information. We take all reasonable steps to prevent unauthorised access, misuse, loss, modification, or disclosure of your information.</p>
+
+      <p>>Personal information is kept only for as long as it is needed for the purpose it was originally collected for. When the personal information is no longer needed for that purpose it will either be destroyed or all information capable of identifying an individual user will be permanently removed.
+</p>
+
+      <p>
+You can make a request to Tourism NT if you would like access and if applicable correct to any personal information held by Tourism NT about you. Access will be provided in accordance with applicable law. Information will be provided to you electronically, in a commonly used, machine readable format. If you request photocopies of documents or copies of photographs or other images, charges may apply.
+</p>
+
+      <p>
+Before submitting an application under Freedom of Information, we encourage you to contact us directly first to discuss any application you wish to make. We may be able to assist you without the need for an application.</p>
+
+      
 
         <small>Parks and Wildlife Commission NT · Terms updated March 2026 · Subject to legal review.</small>
 
