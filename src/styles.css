@@ -437,6 +437,18 @@ main {
   color: var(--offwhite);
 }
 
+.accept__readprivacybutton {
+  background: var(--parks-brown);
+  display: inline;
+  font-weight: bold;
+  border: 0;
+  padding: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: var(--offwhite);
+}
+
+
 .accept__readtermsbutton:hover,
 .accept__readtermsbutton:focus-visible {
   background: none;
