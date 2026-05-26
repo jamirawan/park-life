@@ -27,7 +27,7 @@ function toggleAccept2() {
 document.getElementById('email').addEventListener('input', checkConnectBtn);
 
 function doConnect() {
-  if (!accepted || !accepted2) return;
+  if (!accepted) return;
   document.getElementById('getonline').close();
   document.getElementById('successOverlay').classList.add('show');
   setTimeout(() => { window.location.href = 'https://northernterritory.com/promotions/wifi/wangi'; }, 3000);
