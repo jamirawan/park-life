@@ -38,8 +38,8 @@
     </header>
 
     <dialog class="getonline" id="getonline" closedby="any">
-      <h2>Get online</h2>
-
+      <h2>Free Parks Wi-Fi</h2>
+        <h3>Enter your email to get online instantly</h3>
       <div class="getonline__survey">
 
         <div class="getonline__survey__field">
@@ -47,8 +47,8 @@
           <input class="getonline__survey__input getonline__email" type="email" name="email" id="email"
             placeholder="you@example.com" />
         </div>
-        <button class="accept__readtermsbutton" command="show-modal" commandfor="terms">Read the Terms of Use</button>
-        <button class="accept__readprivacybutton" command="show-modal" commandfor="privacy">Read Privacy Policy</button>
+       <button class="accept__readtermsbutton" command="show-modal" commandfor="terms">Read the Terms of Use</button>
+        <!--<button class="accept__readprivacybutton" command="show-modal" commandfor="privacy">Read Privacy Policy</button> -->
         <div class="accept-row" id="acceptRow" onclick="toggleAccept()">
           <div class="chk" id="chkBox">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
@@ -56,17 +56,17 @@
                 stroke-linejoin="round" />
             </svg>
           </div>
-          <label>I have read and agree to the <strong>Terms of Use</strong> for the NT Parks &amp; Wildlife Guest Wi-Fi
+          <label>I have read and agree to the <strong class="accept__readtermsbutton" command="show-modal" commandfor="terms">Terms of Use</strong> for the NT Parks &amp; Wildlife Guest Wi-Fi
             network.</label>
         </div>
-        <div class="accept-row" id="acceptRow2" onclick="toggleAccept2()">
+        <div class="accept-row" id="acceptRow2">
           <div class="chk" id="chkBox">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none"  onclick="toggleAccept2()">
               <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
           </div>
-          <label>I have read and agree to the <strong>Privacy Policy</strong> for the NT Parks &amp; Wildlife Guest Wi-Fi network.</label>
+          <label>I have read and agree to the <strong >Privacy Policy</strong> for the NT Parks &amp; Wildlife Guest Wi-Fi network.</label>
         </div>
         <!-- <div class="getonline__survey__field">
         <input class="getonline__survey__checkbox" type="checkbox" id="accept__checkbox" onclick="toggleAccept()" />
@@ -80,7 +80,7 @@
 
       <button class="dialog__closebutton" commandfor="getonline" command="close" title="Close"
         aria-label="Close">×</button>
-
+      <div>We respect your privacy. Read our<button class="accept__readprivacybutton" command="show-modal" commandfor="privacy">Privacy Policy</button>.</div>
     </dialog>
 
     <section class="hero">
@@ -232,14 +232,14 @@
     </main>
 
     <dialog class="terms" id="terms" closedby="any">
-
+      <div class="terms-box" id="termsBox">
       <h2>Terms and Conditions</h2>
       <h3>Acceptance</h3>
       <p>All users must read, agree with and accept all of the terms and conditions contained in these Terms before
         Using the Tourism NT Wi-Fi service ("the Service").</p>
       <h3>Terms</h3>
 
-      <div class="terms-box" id="termsBox">
+      
         <p>In these Terms:
         </p>
 

@@ -226,7 +226,7 @@ dialog {
 
 .hero {
   background: #eee;
-  height: 70vh;
+  height: 50vh;
   min-height: 300px;
   display: flex;
   justify-content: space-between;
@@ -438,14 +438,15 @@ main {
 }
 
 .accept__readprivacybutton {
-  background: var(--parks-brown);
+  background: none;
   display: inline;
   font-weight: bold;
   border: 0;
   padding: 10px;
   margin-bottom: 20px;
   cursor: pointer;
-  color: var(--offwhite);
+  color: black;
+  text-decoration: underline;
 }
 
 

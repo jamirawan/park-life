@@ -6,9 +6,9 @@ let accepted = false;
 let accepted2 = false;
 
 function checkConnectBtn() {
-  const email = document.getElementById('email').value.trim();
-  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  document.getElementById('btnConnect').disabled = !(accepted && accepted2 && validEmail);
+  // const email = document.getElementById('email').value.trim();
+ // const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  document.getElementById('btnConnect').disabled = !(accepted);
 }
 
 function toggleAccept() {
@@ -20,7 +20,7 @@ function toggleAccept() {
 function toggleAccept2() {
   accepted2 = !accepted2;
   document.getElementById('acceptRow2').classList.toggle('checked', accepted2);
-  checkConnectBtn();
+  
 }
 
 // Re-check button when email is typed
