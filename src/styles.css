@@ -188,6 +188,22 @@ dialog {
   background: none;
 }
 
+.getonline__survey__row {
+  display: flex;
+  gap: 12px;
+}
+
+.getonline__survey__row .getonline__survey__field {
+  flex: 1;
+  min-width: 0; /* prevents overflow if content is wide */
+}
+
+@media (max-width: 480px) {
+  .getonline__survey__row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 .getonline__survey__field {
   margin: 0 0 1rem;
 }
@@ -426,28 +442,19 @@ main {
   margin-bottom: 12px;
 }
 
-.accept__readtermsbutton {
-  background: var();
-  display: inline;
-  font-weight: bold;
-  border: 0;
-  padding: 10px;
-  margin-bottom: 20px;
+.accept__readtermsbutton, .accept__readprivacybutton {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
-  color: var(--offwhite);
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  display: inline;
+  vertical-align: baseline; /* keeps it sitting on the same text baseline */
 }
 
-.accept__readprivacybutton {
-  background: none;
-  display: inline;
-  font-weight: bold;
-  border: 0;
-  padding: 10px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  color: black;
-  text-decoration: underline;
-}
 
 
 .accept__readtermsbutton:hover,
