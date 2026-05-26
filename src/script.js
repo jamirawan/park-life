@@ -53,3 +53,20 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+// Post code
+
+  const countrySelect = document.getElementById('country');
+  const postcodeField = document.getElementById('postcode-field');
+  const postcodeInput = document.getElementById('postcode');
+
+  function togglePostcode() {
+    const isAustralia = countrySelect.value === 'AU';
+    postcodeField.style.display = isAustralia ? 'block' : 'none';
+    postcodeInput.required = isAustralia;
+  }
+
+  // Show postcode immediately since Australia is the default
+  togglePostcode();
+
+  countrySelect.addEventListener('change', togglePostcode);

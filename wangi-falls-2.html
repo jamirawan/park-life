@@ -51,16 +51,16 @@
         <!-- Name and country -->
         <div class="getonline__survey__row">
   <div class="getonline__survey__field">
-    <label class="getonline__survey__label" for="name">Full name</label>
+    <label class="getonline__survey__label" for="name">First name</label>
     <input class="getonline__survey__input" type="text" name="name" id="name"
       placeholder="Your name" />
   </div>
 
   <div class="getonline__survey__field">
-    <label class="getonline__survey__label" for="country">Country</label>
+    <label class="getonline__survey__label" for="country">Country of origin</label>
     <select class="getonline__survey__input getonline__country" name="country" id="country">
-      <option value="" disabled selected>Select your country</option>
-    <option value="AU">Australia</option>
+    <option value="" disabled>Select your country</option>
+    <option value="AU" selected>Australia</option>
     <option value="AF">Afghanistan</option>
     <option value="AL">Albania</option>
     <option value="DZ">Algeria</option>
@@ -251,6 +251,12 @@
     <option value="ZW">Zimbabwe</option>
   </select>
 </div>
+ <!-- Postcode — shown only when Australia is selected -->
+  <div class="getonline__survey__field" id="postcode-field" style="display: none;">
+    <label class="getonline__survey__label" for="postcode">Postcode</label>
+    <input class="getonline__survey__input" type="text" name="postcode" id="postcode"
+      placeholder="e.g. 3000" maxlength="4" pattern="\d{4}" inputmode="numeric" />
+  </div>
 </div>
        <!--<button class="accept__readtermsbutton" command="show-modal" commandfor="terms">Read the Terms of Use</button>-->
         <!--<button class="accept__readprivacybutton" command="show-modal" commandfor="privacy">Read Privacy Policy</button> -->
@@ -265,8 +271,7 @@
             network.</label>
         </div>
         <div style="font-weight:800;">
-          <h3>Visiting the NT?</h3>
-          <p>Let us send the best local recommendations, travel tips and destination updates.</p>
+          <h3>Unlock Local NT Tips</h3>
         </div>
         <div class="accept-row" id="acceptRow2" onclick="toggleAccept2()">
           <div class="chk" id="chkBox">
@@ -275,7 +280,7 @@
                 stroke-linejoin="round" />
             </svg>
           </div>
-          <label>Yes, please. Send me travel tips straight to my inbox.</label>
+          <label>Yes! Send me travel tips and local recommendations for my trip</label>
         </div>
         <!-- <div class="getonline__survey__field">
         <input class="getonline__survey__checkbox" type="checkbox" id="accept__checkbox" onclick="toggleAccept()" />
