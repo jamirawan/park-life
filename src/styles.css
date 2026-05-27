@@ -188,6 +188,22 @@ dialog {
   background: none;
 }
 
+.getonline__survey__row {
+  display: flex;
+  gap: 12px;
+}
+
+.getonline__survey__row .getonline__survey__field {
+  flex: 1;
+  min-width: 0; /* prevents overflow if content is wide */
+}
+
+@media (max-width: 480px) {
+  .getonline__survey__row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 .getonline__survey__field {
   margin: 0 0 1rem;
 }
@@ -350,7 +366,7 @@ main {
 }
 
 .swim-notice strong {
-  color: var(--park-accent);
+  color: black
 }
 
 /* Section heading */
@@ -426,28 +442,19 @@ main {
   margin-bottom: 12px;
 }
 
-.accept__readtermsbutton {
-  background: var();
-  display: inline;
-  font-weight: bold;
-  border: 0;
-  padding: 10px;
-  margin-bottom: 20px;
+.accept__readtermsbutton, .accept__readprivacybutton {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
-  color: var(--offwhite);
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  display: inline;
+  vertical-align: baseline; /* keeps it sitting on the same text baseline */
 }
 
-.accept__readprivacybutton {
-  background: none;
-  display: inline;
-  font-weight: bold;
-  border: 0;
-  padding: 10px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  color: black;
-  text-decoration: underline;
-}
 
 
 .accept__readtermsbutton:hover,
@@ -469,10 +476,10 @@ main {
 .chk svg { opacity:0;transform:scale(0.3);transition:all 0.18s; }
 .accept-row.checked .chk svg { opacity:1;transform:scale(1); }
 .accept-row label { font-size:12.5px;color:#444;line-height:1.5;cursor:pointer; }
-.accept-row label strong { color:var(--park-accent); }
+.accept-row label strong { color:black; }
 
 .accept-row label { font-size:12.5px;color:#444;line-height:1.5;cursor:pointer; }
-.accept-row label strong { color:var(--park-accent); }
+.accept-row label strong { color:var(--parks-black); }
 
 /* Buttons */
 .connect-section { padding:0 20px 20px; }
@@ -636,6 +643,7 @@ footer {
   margin: 1rem 0 0;
   padding: 0 1rem;
   max-width: 1100px;
+  margin: auto;
 }
 
 .footer__brand {

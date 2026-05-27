@@ -27,7 +27,7 @@ function toggleAccept2() {
 document.getElementById('email').addEventListener('input', checkConnectBtn);
 
 function doConnect() {
-  if (!accepted || !accepted2) return;
+  if (!accepted) return;
   document.getElementById('getonline').close();
   document.getElementById('successOverlay').classList.add('show');
   setTimeout(() => { window.location.href = 'https://northernterritory.com/promotions/wifi/wangi'; }, 3000);
@@ -53,3 +53,20 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+// Post code
+
+  const countrySelect = document.getElementById('country');
+  const postcodeField = document.getElementById('postcode-field');
+  const postcodeInput = document.getElementById('postcode');
+
+  function togglePostcode() {
+    const isAustralia = countrySelect.value === 'AU';
+    postcodeField.style.display = isAustralia ? 'block' : 'none';
+    postcodeInput.required = isAustralia;
+  }
+
+  // Show postcode immediately since Australia is the default
+  togglePostcode();
+
+  countrySelect.addEventListener('change', togglePostcode);
