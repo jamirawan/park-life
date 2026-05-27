@@ -266,7 +266,7 @@ dialog {
   letter-spacing: -0.01em;
   line-height: 1.05;
   margin-bottom: 6px;
-  color: var(--gold);
+  color: #fff;
 }
 
 .hero-title__kicker {
