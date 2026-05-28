@@ -35,7 +35,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.4;
-  padding: 20px 16px 40px;
+  padding: 20px 10px 40px;
+}
+
+@media (min-width: 600px) {
+  body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 h1, h2, h3 {
@@ -276,7 +283,7 @@ dialog {
 }
 
 .hero-title {
-  font-size: clamp(32px,80vw,60px);
+  font-size: clamp(44px, 60px, 11vw);
   margin: 0 0 20px;
   font-weight: 780;
   letter-spacing: -0.01em;
