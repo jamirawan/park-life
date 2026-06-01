@@ -472,12 +472,14 @@ main {
 
 /* Accept */
 .accept-row {
-  display:flex; align-items:flex-start; gap:11px; padding:13px 14px;
-  background:white; border:1.5px solid rgba(0,0,0,0.09); border-radius:2px;
-  cursor:pointer; transition:all 0.18s; margin-bottom:12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  border-radius: 2px;
+  transition:all 0.18s;
+  margin-bottom: 12px;
 }
 .accept-row:hover { border-color:#ccc; }
-.accept-row.checked { border-color:var(--park-accent); background:rgba(26,122,94,0.04); }
 .chk { width:20px;height:20px;border:2px solid #ccc;border-radius:2px;background:white;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all 0.18s; }
 .accept-row.checked .chk { background:var(--park-accent); border-color:var(--park-accent); }
 .chk svg { opacity:0;transform:scale(0.3);transition:all 0.18s; }
