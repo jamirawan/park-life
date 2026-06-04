@@ -33,11 +33,11 @@
       </div>
       <div class="dept">Northern Territory<div class="dept__subtitle">Free wi-fi</div>
       </div>
-      <button class="getonlinebutton" data-action="GET_ONLINE_CLICKED" commandfor="getonline"
+      <button class="getonlinebutton" data-action="GET_ONLINE_CLICKED" commandfor="getonlineWangi"
         command="show-modal">Connect to Wi-Fi</button>
     </header>
 
-    <dialog class="getonline" id="getonline" closedby="any">
+    <dialog class="getonline" id="getonlineWangi" closedby="any">
       <h3>Enter your email to get online instantly</h3>
       <div class="getonline__survey">
 
@@ -288,7 +288,7 @@
       <button class="btn-connect" id="btnConnect" disabled onclick="doConnect()">Continue</button>
       <!-- <button class="getonline__continuebutton" data-name="forwardButton" type="button" id="btnConnect" disabled onclick="doConnect()">Continue</button>-->
 
-      <button class="dialog__closebutton" commandfor="getonline" command="close" title="Close"
+      <button class="dialog__closebutton" commandfor="getonlineWangi" command="close" title="Close"
         aria-label="Close">×</button>
       <div style="font-weight:700; font-size:12.5px; color:#696969;">We respect your privacy. Please review our <button class="accept__readprivacybutton" command="show-modal" commandfor="privacy">Privacy Policy</button> before connecting.</div>
     </dialog>
