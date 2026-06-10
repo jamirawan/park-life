@@ -26,11 +26,26 @@ function toggleAccept2() {
 // Re-check button when email is typed
 document.getElementById('email').addEventListener('input', checkConnectBtn);
 
-function doConnect() {
+/*function doConnect() {
   if (!accepted) return;
   document.getElementById('getonline').close();
   document.getElementById('successOverlay').classList.add('show');
   setTimeout(() => { window.location.href = 'https://northernterritory.com/promotions/wifi/wangi'; }, 3000);
+} */
+function doConnect() {
+  if (!accepted) return;
+
+  const dialog = document.querySelector('dialog[id^="getonline"]');
+  dialog.close();
+  document.getElementById('successOverlay').classList.add('show');
+
+  const redirectMap = {
+    'getonlineWangi':         'https://northernterritory.com/promotions/wifi/wangi',
+    'getonlineKingsCanyon':   'https://northernterritory.com/promotions/wifi/kings-canyon',
+    'getonlineDevilsMarbles': 'https://northernterritory.com/promotions/wifi/devils-marbles',
+  };
+
+  setTimeout(() => { window.location.href = redirectMap[dialog.id]; }, 3000);
 }
 
 function doGuest() {
