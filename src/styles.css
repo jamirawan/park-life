@@ -159,6 +159,13 @@ button:focus-visible,
   margin: 0 0 1.1em;
 }
 
+input,
+select,
+textarea {
+  outline-color: var(--parks-orange);
+  accent-color: var(--parks-orange);
+}
+
 dialog {
   padding: 1rem 1rem 1rem 2rem;
   max-width: 960px;
@@ -232,6 +239,26 @@ dialog {
   font-size: 16px;
   width: 100%;
   display: block;
+}
+
+.getonline__survey__checkbox-and-label {
+  font-size: .8em;
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+}
+
+.getonline__survey__checkbox-and-label input[type="checkbox"] {
+  margin-top: 2px;  
+}
+
+.getonline__survey__checkbox-and-label + .getonline__survey__field__hint {
+  text-indent: 1.2rem;
+  margin-top: .2rem;
+}
+
+.getonline__survey__field__hint {
+  font-size: .8em;
 }
 
 .getonline__continuebutton {
@@ -475,10 +502,9 @@ main {
   display: flex;
   align-items: flex-start;
   gap: 11px;
-  border-radius: 2px;
-  transition:all 0.18s;
   margin-bottom: 12px;
 }
+
 .accept-row:hover { border-color:#ccc; }
 .chk { width:20px;height:20px;border:2px solid #ccc;border-radius:2px;background:white;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all 0.18s; }
 .accept-row.checked .chk { background:var(--park-accent); border-color:var(--park-accent); }
