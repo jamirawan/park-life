@@ -2,29 +2,40 @@ document.getElementById('termsBox').addEventListener('scroll', function(){
   document.getElementById('scrollNote').style.opacity = this.scrollTop > 20 ? '0' : '1';
 });
 
-let accepted = false;
-let accepted2 = false;
+function getTermsCheckbox() {
+  return document.getElementById('termsCheckbox') || document.getElementById('accept__checkbox');
+}
+
+function isTermsAccepted() {
+  const termsCheckbox = getTermsCheckbox();
+  return !!(termsCheckbox && termsCheckbox.checked);
+}
 
 function checkConnectBtn() {
-  // const email = document.getElementById('email').value.trim();
- // const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  document.getElementById('btnConnect').disabled = !(accepted);
+  const btnConnect = document.getElementById('btnConnect');
+  if (!btnConnect) return;
+  btnConnect.disabled = !isTermsAccepted();
 }
 
 function toggleAccept() {
-  accepted = !accepted;
-  document.getElementById('acceptRow').classList.toggle('checked', accepted);
+  const termsCheckbox = getTermsCheckbox();
+  if (!termsCheckbox) return;
+  termsCheckbox.checked = !termsCheckbox.checked;
   checkConnectBtn();
 }
 
 function toggleAccept2() {
-  accepted2 = !accepted2;
-  document.getElementById('acceptRow2').classList.toggle('checked', accepted2);
-  
+  checkConnectBtn();
 }
 
 // Re-check button when email is typed
 document.getElementById('email').addEventListener('input', checkConnectBtn);
+
+const termsCheckbox = getTermsCheckbox();
+if (termsCheckbox) {
+  termsCheckbox.addEventListener('change', checkConnectBtn);
+}
+checkConnectBtn();
 
 /*function doConnect() {
   if (!accepted) return;
@@ -33,7 +44,7 @@ document.getElementById('email').addEventListener('input', checkConnectBtn);
   setTimeout(() => { window.location.href = 'https://northernterritory.com/promotions/wifi/wangi'; }, 3000);
 } */
 function doConnect() {
-  if (!accepted) return;
+  if (!isTermsAccepted()) return;
 
   const dialog = document.querySelector('dialog[id^="getonline"]');
   dialog.close();

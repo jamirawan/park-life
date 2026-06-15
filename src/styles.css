@@ -167,7 +167,7 @@ textarea {
 }
 
 dialog {
-  padding: 1rem 1rem 1rem 2rem;
+  padding: 1rem 1rem 2.2rem 2rem;
   max-width: 960px;
   width: 90%;
   margin: auto;
@@ -519,12 +519,19 @@ main {
 /* Buttons */
 .connect-section { padding:0 20px 20px; }
 .btn-connect {
-  width:100%; padding:16px;
-  background:var(--park-accent); background-image:linear-gradient(135deg,#0F4A38,var(--park-accent));
-  color:white; font-family:'Barlow Condensed',sans-serif; font-size:15px;
-  font-weight:700; letter-spacing:0.14em;  ;
-  border:none; border-radius:2px; cursor:pointer; transition:all 0.18s;
-  box-shadow:0 4px 16px rgba(26,122,94,0.4); margin-bottom:8px;
+  width: 100%;
+  padding: 16px;
+  background: var(--park-accent);
+  background-image: linear-gradient(135deg,#0F4A38,var(--park-accent));
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s;
+  box-shadow:0 4px 16px rgba(26,122,94,0.4);
+  margin: 0;
 }
 .btn-connect:hover:not(:disabled) { box-shadow:0 6px 20px rgba(26,122,94,0.5); transform:translateY(-1px); }
 .btn-connect:active:not(:disabled) { transform:translateY(0); }
