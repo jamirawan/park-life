@@ -183,7 +183,7 @@ textarea {
 }
 
 dialog {
-  padding: 1rem 1rem 2.2rem 2rem;
+  padding: 1rem 1rem 1.2rem 2rem;
   max-width: 960px;
   width: 90%;
   margin: auto;
@@ -192,6 +192,16 @@ dialog {
 
 ::backdrop {
   background: rgba(0,0,0, .65);
+}
+
+/* provide space for the close button */
+dialog::before {
+  content: '';
+  float: right;
+  width: 27px;
+  height: 24px;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .dialog__closebutton {
@@ -270,7 +280,7 @@ dialog {
 
 .getonline__survey__checkbox-and-label + .getonline__survey__field__hint {
   text-indent: 1.2rem;
-  margin-top: .2rem;
+  margin-top: .4rem;
 }
 
 .getonline__survey__field__hint {
@@ -507,8 +517,8 @@ main {
 
 
 
-.accept__readtermsbutton:hover,
-.accept__readtermsbutton:focus-visible {
+.getonline__survey__field__hint button:hover,
+.getonline__survey__field__hint button:focus-visible {
   background: none;
   color: var(--parks-orange);
 }
@@ -653,12 +663,6 @@ details[open]::details-content {
 }
 
 .terms-box {
-  background: white;
-  overflow-y: auto;
-  padding: 1rem 16px 1rem 1px;
-  margin-bottom: 8px;
-  scroll-behavior: smooth;
-  max-height: 80vh;
 }
 
 .terms-box::-webkit-scrollbar {
