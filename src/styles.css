@@ -86,7 +86,6 @@ table {
   vertical-align: top;
   caption-side: bottom;
   border-collapse: collapse;
-  max-width: 600px;
 }
 
 tr:nth-of-type(odd) {
@@ -622,6 +621,10 @@ summary:hover {
 
 .faq__answer {
   padding: 1rem;
+}
+
+.faq__answer table {
+  max-width: 600px;
 }
 
 /* Animate the content container */
