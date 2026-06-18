@@ -7,10 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watarrka — NT Parks Guest Wi-Fi</title>
+    <title>Watarrka — NT Parks guest Wi-Fi</title>
   </head>
   <body>
 <div class="content">  
+
 <!-- Success overlay -->
   <div class="success-overlay" id="successOverlay">
     <div class="success-icon">
@@ -25,8 +26,8 @@
     <div class="logo">
       <img class="logo__img" alt="Northern Territory Parks and Wildlife Commission" src="data:image/png;base64,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" />
         </div>
-    <div class="dept">Northern Territory<div class="dept__subtitle">Free wi-fi</div></div>
-    <button class="getonlinebutton" data-action="GET_ONLINE_CLICKED" commandfor="getonlineKingsCanyon" command="show-modal">Connect to wi-fi</button>
+    <div class="dept">Northern Territory<div class="dept__subtitle">Free Wi-Fi</div></div>
+    <button class="getonlinebutton" data-action="GET_ONLINE_CLICKED" commandfor="getonlineKingsCanyon" command="show-modal">Connect to Wi-Fi</button>
   </header>
 
  <dialog class="getonline" id="getonlineKingsCanyon" closedby="any">
@@ -295,7 +296,7 @@
     
   <section class="hero">
     
-    <img class="hero__img" src="https://a.storyblok.com/f/286255898790625/3d61c7de77/aerial-view-of-watarrka-national-park-kings-canyon.jpg" alt="Arial view of Wangi Falls" />
+    <img class="hero__img" src="./src/img/aerial-view-of-watarrka-national-park-kings-canyon.jpg" alt="Arial view of Kings Canyon" />
     
     <div class="hero__inner">
 
@@ -309,21 +310,23 @@
   </section>
 
   <main>
-   <p>Before connecting, please note that wi‑fi access here is limited and may be slow due to our remote location. Mobile phone coverage is not guaranteed, so make sure you have enough water, sun protection, and tell someone your plans before exploring. We hope you enjoy your visit and stay safe. </p>
+   <p>Before connecting, please note that Wi-Fi access here is limited and may be slow due to our remote location. Mobile phone coverage is not guaranteed, so make sure you have enough water, sun protection, and tell someone your plans before exploring. We hope you enjoy your visit and stay safe. </p>
     <section class="faq">
         <details>
         <summary>NT Parks Visitor Pass</summary>
         <div class="faq__answer">
-          <p>If you’re a visitor to the NT, you need a NT Parks Visitor Pass to visit most national parks and reserves, including Watarrka National Park.</p>
+          <p>If you’re a visitor to the NT, you need a <strong>NT Parks Visitor Pass</strong> to visit most national parks and reserves, including Watarrka National Park.</p>
           <p>The visitor pass allows you to visit all parks and reserves managed by the NT Government within your valid dates. </p>
-          <p>You must connect to the wi-fi, then access the NT parks booking system to get a visitor pass. </p>
-          <p>NT residents don’t need a visitor pass but may be asked to show proof of residency, such as a valid NT driver licence. </p>
+          <p>You must connect to the Wi-Fi, then access the <strong>NT parks booking system</strong> to get a visitor pass. </p>
+          <p>NT residents don’t need a visitor pass but may be asked to show proof of residency, such as a valid NT driver licence.</p>
         </div>
       </details>
       <details>
         <summary>Watarrka walk and hike information</summary>
         <div class="faq__answer">
+        
           <h3>Rim walk</h3>
+          <p>You must walk this trail in a clockwise direction. The trail is marked with blue arrows.</p>
           <table>
             <tbody>
               <tr>
@@ -331,17 +334,24 @@
                 <td style="width: 80%;">6km loop</td>
               </tr>
               <tr>
-                <th>Duration</th>
-                <td>3-4 hours</td>
+                <th>Time</th>
+                <td>3 to 4 hours</td>
               </tr>
               <tr>
-                <th>Features</th>
-                <td>Sandstone domes, Garden of Eden, canyon views</td>
+                <th>Grade</th>
+                <td>Moderate to difficult</td>
               </tr>
               </tbody>
           </table>
-          <p>Heat restrictions apply when maximum temperatures is 36°C or above.</p>
+          <p>The rim walk starts with a difficult climb so you should only walk it if you are fit and healthy.</p>
+          <p>The walk ascends to the top of the canyon and follows the rim around before descending to the car park.</p>
+          <p>About halfway along is the Garden of Eden, a beautiful rockhole surrounded by rare plants. There is no swimming in the waterhole.</p>
+          <p>Be careful during the hotter months, from September to April. During this time, you should consider walking other shorter walks during the middle of the day.</p>
+          <p>On days when the temperature forecast is 36°C or above, you must start the Kings Canyon Rim Walk before 9am. You will not be allowed to start the walk after 9am.</p>
+          <p>Stay on the stairs and boardwalks along the track. They are there to make your walk safe and protect the environment.</p>
+          
           <h3>Kings Creek walk</h3>
+          <p>This walk is marked with red markers.</p>
           <table>
             <tbody>
               <tr>
@@ -349,8 +359,8 @@
                 <td style="width: 80%;">2.6km return</td>
               </tr>
               <tr>
-                <th>Duration</th>
-                <td>~1 hour</td>
+                <th>Time</th>
+                <td>Around 1 hour</td>
               </tr>
               <tr>
                 <th>Grade</th>
@@ -358,8 +368,12 @@
               </tr>
               </tbody>
           </table>
-          <p>Accessible walk along the canyon floor</p>
+          <p>This walk is suitable for families and people seeking an easy walk.</p>
+          <p>Follow the same track to return to the carpark.</p>
+          <p>You must have sturdy shoes for this trail.</p>
+          
           <h3>South wall return walk</h3>
+          <p>This walk is marked with green arrows to the gate and blue arrows back.</p>
           <table>
             <tbody>
               <tr>
@@ -367,8 +381,8 @@
                 <td style="width: 80%;">4.8km return</td>
               </tr>
               <tr>
-                <th>Duration</th>
-                <td>~2 hour</td>
+                <th>Time</th>
+                <td>Around 2 hours</td>
               </tr>
               <tr>
                 <th>Grade</th>
@@ -376,20 +390,42 @@
               </tr>
               </tbody>
           </table>
-          <p>Less crowded alternative with elevated views.
-Note: Walks may close due to extreme heat or safety conditions.
-</p>
+          <p>The walk starts with a steep climb to the south wall of Kings Canyon leading to stunning views.</p>
+          <p>The walk ends at a one-way gate. You will return to the car park by the same route.</p>
+          <p>On days when the temperature forecast is 36°C or above, you must start the walk before 11am.</p>
+          <p>You can’t access the Garden of Eden or the rest of the rim walk from the South Wall return walk.</p>
+
+          <h3>Kathleen Springs</h3>
+          <p>This walk is a sealed track without markers.</p>
+          <table>
+            <tbody>
+              <tr>
+                <th style="width: 20%;">Distance</th>
+                <td style="width: 80%;">2.4km return</td>
+              </tr>
+              <tr>
+                <th>Time</th>
+                <td>Around 1.5 hours</td>
+              </tr>
+              <tr>
+                <th>Grade</th>
+                <td>Easy</td>
+              </tr>
+              </tbody>
+          </table>
+          <p>This walk is good for families and visitors with limited mobility. There is wheelchair access for this walk.</p>
+          <p>Signs along the track will tell you stories of Aboriginal culture and the recent cattle industry.</p>
+          <p>The trail leads to a spring-fed waterhole at the head of Kathleen Gorge. This is a cool place to sit and enjoy the area’s tranquillity.</p>
           
         </div>
       </details>
-<details>
+      <details>
         <summary>Heat management strategy</summary>
         <div class="faq__answer">
         <p>The Parks and Wildlife Commission has introduced a strategy to improve visitor safety at Watarrka. On days when the temperature is forecast to be 36°C or above*, visitors wishing to undertake the Rim Walk need to start their walk before 9am. </p>
         <p>On days when the temperature is forecast to be 36°C or above*, visitors wishing to undertake the South Wall Return Walk need to start their walk before 11am. </p>
         <p>Signs will be updated daily to indicate current access conditions. There is no drinking water available on the Rim. </p>
-        <small>* Based on Bureau of Meteorology forecasts for Watarrka 
-          </small>
+        <small>* Based on Bureau of Meteorology forecasts for Watarrka</small>
           
         </div>
       </details>
@@ -405,7 +441,7 @@ Note: Walks may close due to extreme heat or safety conditions.
               <li>wear a hat, sunscreen, insect repellent, suitable clothing and footwear </li>
               <li>avoid strenuous activity during the heat of the day </li>
               <li>think about your health and fitness when choosing a walk</li>
-              <li>download the Avenza Maps app for free, interactive park maps on your mobile phone or tablet (you must connect to the wi-fi first).</li>
+              <li>download the <strong>Avenza Maps app</strong> for free, interactive park maps on your mobile phone or tablet (you must connect to the Wi-Fi first).</li>
             </ul>
           </p>
           
@@ -415,7 +451,7 @@ Note: Walks may close due to extreme heat or safety conditions.
         <summary>Accommodation</summary>
         <div class="faq__answer">
           <p>Overnight camping in tents, caravans or motorhomes is not allowed in the National Park.</p>
-          <p>Commercial accommodation, camping and bunkhouses are available at <strong>Kings Canyon Resort.</strong></p>
+          <p>Commercial accommodation, camping and bunkhouses are available at <strong>Kings Canyon Resort</strong>.</p>
           <p>Camping and safari-style cabins are also available at <strong>Kings Creek Station</strong>.</p>
 
         </div>
@@ -423,7 +459,7 @@ Note: Walks may close due to extreme heat or safety conditions.
       <details>
         <summary>In an emergency</summary>
         <div class="faq__answer">
-          <p>Emergency Call Devices are located on the Kings Canyon Rim Walk and at the Canyon car park. Please use them to contact the Rangers in an emergency only.</p>
+          <p>Emergency Call Devices (ECDs) are located on the Kings Canyon Rim Walk and at the Canyon car park. Please use them to contact the Rangers in an emergency only.</p>
         </div>
       </details>
       
@@ -436,7 +472,7 @@ Note: Walks may close due to extreme heat or safety conditions.
       <h2>Terms and Conditions</h2>
       <h3>Acceptance</h3>
       <p>All users must read, agree with and accept all of the terms and conditions contained in these Terms before
-        Using the Tourism NT Wi-Fi service ("the Service").</p>
+        Using the Tourism and Events NT Wi-Fi service (“the Service”).</p>
       <h3>Terms</h3>
 
       
@@ -455,7 +491,7 @@ Note: Walks may close due to extreme heat or safety conditions.
               agents.</li>
             <li>We, Us or Our means TENT, any relevant Northern Territory Government agency involved in providing the
               Service (including the Parks and Wildlife Commission of the NT and Darwin Waterfront Corporation, where
-              applicable) and Encapto Pty Ltd .</li>
+              applicable) and Encapto Pty Ltd.</li>
             <li>You or Your means any person accessing or using the Service.</li>
           </ul>
           <li><strong>Access to the Service</strong><br>
@@ -502,7 +538,7 @@ Note: Walks may close due to extreme heat or safety conditions.
             <p>You must not use the Service in a manner that unreasonably interferes with other users’ access or enjoyment of the Service.
               </p>
           </li>
-          <li><strong>Explicit Prohibition – Illegal Content</strong><br>
+          <li><strong>Explicit Prohibition &ndash; Illegal Content</strong><br>
             <p>You must not use the Services to access, download, store, transmit or distribute material that is unlawful including material involving exploitation, abuse or other criminal conduct. 
 We may restrict or report access to such material where required or authorised by law.
               </p>
@@ -594,14 +630,14 @@ To the maximum extent permitted by law, we are not liable for any loss or damage
       <h2>Privacy Policy</h2>
       <h3>Your personal information</h3>
       <p>The Northern Territory Information Act (the Act) provides the community rights to access government information, including personal information, The Act also safeguards the privacy of personal information held by the relevant organisations and ensures that organisations collect and handle personal information responsibly.</p>
-      <p>In the Act, Personal Information is any information a public sector organisation holds from which a person’s identity is apparent or is reasonably able to be ascertained. Tourism NT is committed to protecting your personal information. We take all reasonable steps to prevent unauthorised access, misuse, loss, modification, or disclosure of your information.</p>
+      <p>In the Act, Personal Information is any information a public sector organisation holds from which a person’s identity is apparent or is reasonably able to be ascertained. Tourism and Events NT is committed to protecting your personal information. We take all reasonable steps to prevent unauthorised access, misuse, loss, modification, or disclosure of your information.</p>
       <p>>Personal information is kept only for as long as it is needed for the purpose it was originally collected for. When the personal information is no longer needed for that purpose it will either be destroyed or all information capable of identifying an individual user will be permanently removed.</p>
-      <p>You can make a request to Tourism NT if you would like access and if applicable correct to any personal information held by Tourism NT about you. Access will be provided in accordance with applicable law. Information will be provided to you electronically, in a commonly used, machine readable format. If you request photocopies of documents or copies of photographs or other images, charges may apply.</p>
+      <p>You can make a request to Tourism and Events NT if you would like access and if applicable correct to any personal information held by Tourism and Events NT about you. Access will be provided in accordance with applicable law. Information will be provided to you electronically, in a commonly used, machine readable format. If you request photocopies of documents or copies of photographs or other images, charges may apply.</p>
       <p>Before submitting an application under Freedom of Information, we encourage you to contact us directly first to discuss any application you wish to make. We may be able to assist you without the need for an application.</p>
       <p><strong>You can contact us:</strong></p>
 <p>Via telephone: +61 8 8999 1789 <br>Via email:&nbsp;<a href="mailto:marketing.tourismeventsnt@nt.gov.au">marketing.tourismeventsnt@nt.gov.au</a></p>
 <p>You can also write to us at:</p>
-<p>Marketing Solutions Team <br>Tourism NT <br>Level 8, Charles Darwin Centre <br>19 The Mall, Darwin, 0800 <br>PO Box 1155, Darwin NT 0801</p>
+<p>Marketing Solutions Team <br>Tourism and Events NT <br>Level 8, Charles Darwin Centre <br>19 The Mall, Darwin, 0800 <br>PO Box 1155, Darwin NT 0801</p>
 <h2>Freedom of information</h2>
 <h3>Lodging an application under Freedom of Information:</h3>
 <p>Should you wish lodge an application you can do so by sending a completed application, proof of identity and (if applicable) payment or receipt for payment of the application fee of AUD$30.00 to:</p>
@@ -609,25 +645,25 @@ To the maximum extent permitted by law, we are not liable for any loss or damage
 <p>Phone: 08 8999 4002<br>Email:&nbsp;<a href="mailto:DTC.FOI@nt.gov.au">DTC.FOI@nt.gov.au</a></p>
 <p><a href="https://northernterritory.com/find-out-more/foi-access">Information about Freedom of Information</a></p>
 <h2>Protecting your privacy</h2>
-<p>The Act provides remedies for breaches of privacy of an individual’s personal information. The Act contains 10 Information Privacy Principles that provide for the collection, use and disclosure, management and openness of personal information that Tourism NT deals with.&nbsp;<a href="https://infocomm.nt.gov.au/privacy/information-privacy-principles" target="_blank" rel="noopener" class="trk-conversion-link">Information on Privacy Principles</a></p>
+<p>The Act provides remedies for breaches of privacy of an individual’s personal information. The Act contains 10 Information Privacy Principles that provide for the collection, use and disclosure, management and openness of personal information that Tourism and Events NT deals with.&nbsp;<a href="https://infocomm.nt.gov.au/privacy/information-privacy-principles" target="_blank" rel="noopener">Information on Privacy Principles</a></p>
 <h2>Privacy complaints</h2>
-<p>If you are concerned that your personal information has not been protected, or that Tourism NT has breached your privacy, you can make a complaint in writing, setting out your name and contact details, and the circumstances that lead you to believe that your privacy has been breached. Please provide as much detail as possible such as date, time, location of incidents, who did what, and the names and contact details of any witnesses.</p>
+<p>If you are concerned that your personal information has not been protected, or that Tourism and Events NT has breached your privacy, you can make a complaint in writing, setting out your name and contact details, and the circumstances that lead you to believe that your privacy has been breached. Please provide as much detail as possible such as date, time, location of incidents, who did what, and the names and contact details of any witnesses.</p>
 <p>To make a privacy complaint, download the Privacy Complaint form, and submit to <a href="mailto:generalservices.tourismeventsnt@nt.gov.au">generalservices.tourismeventsnt@nt.gov.au</a>:</p>
-<p><a href="https://www.tourismandeventsnt.com.au/file/download/2270" target="_blank" rel="noopener" class="trk-conversion-link">Download the Privacy Complaint Form</a>&nbsp;(Word doc, 32KB)</p>
-<p>If you are not satisfied with the response you receive from Tourism NT in relation to a privacy complaint, you can then lodge a complaint with the Northern Territory Information Commissioner:</p>
-<p><a href="http://www.infocomm.nt.gov.au/" target="_blank" rel="noopener" class="trk-conversion-link">The Office of the Information Commissioner</a></p>
+<p><a href="https://www.tourismandeventsnt.com.au/file/download/2270" target="_blank" rel="noopener">Download the Privacy Complaint Form</a>&nbsp;(Word doc, 32KB)</p>
+<p>If you are not satisfied with the response you receive from Tourism and Events NT in relation to a privacy complaint, you can then lodge a complaint with the Northern Territory Information Commissioner:</p>
+<p><a href="http://www.infocomm.nt.gov.au/" target="_blank" rel="noopener">The Office of the Information Commissioner</a></p>
 <h2>Collection of information</h2>
-<p>Tourism NT generally collects, holds, uses and discloses the following personal information:</p>
+<p>Tourism and Events NT generally collects, holds, uses and discloses the following personal information:</p>
 <ul>
-<li>on internet users based on their interaction with websites and social media accounts owned or operated by Tourism NT, the NT Government or our partners, including but not limited to tourismnt.com.au, ntbusinessevents.com.au, and northernterritory.com;</li>
+<li>on internet users based on their interaction with websites and social media accounts owned or operated by Tourism and Events NT, the NT Government or our partners, including but not limited to tourismnt.com.au, ntbusinessevents.com.au, and northernterritory.com;</li>
 <li>on consumers provided to the organisation by the individual, a third party such as a travel agent, third party data providers, data from travel industry partnerships or from a marketing organisation;</li>
-<li>on travel partners. Tourism NT endeavours to seek the consent of the individual or their company to collect, hold, use and disclose this information. If the requisite specific consent is obtained, this information may also be disclosed to Tourism NT’s tourism partners and</li>
+<li>on travel partners. Tourism and Events NT endeavours to seek the consent of the individual or their company to collect, hold, use and disclose this information. If the requisite specific consent is obtained, this information may also be disclosed to Tourism and Events NT’s tourism partners and</li>
 <li>relating to the employment, development and management of departmental personnel and contractors.</li>
 </ul>
 <p>When you interact with us, you may be asked to provide personal information. This may include:</p>
 <p><strong>Identity Information</strong>: Your name, username or similar identifier, date of birth and gender.</p>
 <p><strong>Contact Information</strong>: Your place of residence, email address and telephone numbers.</p>
-<p><strong>Transaction Information</strong>: Details about products and services you have purchased from Tourism NT or our travel industry partners such as airlines, online travel agents and booking sites, and may include date and time of purchase.</p>
+<p><strong>Transaction Information</strong>: Details about products and services you have purchased from Tourism and Events NT or our travel industry partners such as airlines, online travel agents and booking sites, and may include date and time of purchase.</p>
 <p><strong>Technical Information</strong>: Internet protocol (IP) address, your login data, browser type and version, browser actions, time zone setting and location, browser plug-in types and versions, operating system and platform and other technology on the devices you use to access this website.</p>
 <p><strong>Enquiry Information</strong>: Is data you provided us with when you contact us for customer service assistance (by any means of communication including written communications or via our website(s), support forums, telephone, email, SMS, or our social media channels) or when you visit us at a public event, such as a trade show or exhibition or participate in one of our surveys, competitions or prize draws, we may record all customer service communications and keep information about the particular communication, including your name, your business details, the reason why you contacted us, and the advice we gave you so we can track the resolution of any customer service issues and for customer service training purposes.</p>
 <p><strong>Profile Information</strong>: Username and password provided by you and information regarding interests and travel preferences. We may also collect additional personal information and data when you participate in activities such as online forums, web forms, quizzes, surveys and chat rooms; post information on bulletin boards or through social media; complete nomination and application forms; or request information via email.</p>
@@ -637,8 +673,8 @@ To the maximum extent permitted by law, we are not liable for any loss or damage
 <p>Aggregated data refers to numerical or non-numerical information collected from multiple sources, measurements, or individuals. It is compiled into summaries for various purposes like making comparisons, analysing trends, or generating statistics. For instance, we might aggregate your usage data to calculate the percentage of users who access a specific website feature.</p>
 <p>We collect, use, and share anonymised aggregated data, such as statistical or demographic information. This data may be derived from your personal information, but providing it doesn’t directly or indirectly reveal your identity, it is not considered personal information under the law. However, if we combine or link anonymised aggregated data with your personal information in a way that makes it possible to identify you, the combined data will be treated as personal information and used in accordance with this Policy.</p>
 <h2>Cookies</h2>
-<p>Some of the pages in websites managed by Tourism NT use ‘cookies’. Cookies are text files that a website transfers to a user’s computer hard drive. Using and processing cookies allows Tourism NT to customise web content for individual users. Cookies by themselves do not allow Tourism NT to see a user’s e-mail address or other personal information. If users submit personal information to Tourism NT, the information may be linked to data stored in the cookie. Once users check the cookie consent on the website their information will be collected through the use of cookies.</p>
-<p>As you interact with our website, Tourism NT may use automated technologies or interactions to collect personal data by using cookies or other similar technologies.</p>
+<p>Some of the pages in websites managed by Tourism and Events NT use ‘cookies’. Cookies are text files that a website transfers to a user’s computer hard drive. Using and processing cookies allows Tourism and Events NT to customise web content for individual users. Cookies by themselves do not allow Tourism and Events NT to see a user’s e-mail address or other personal information. If users submit personal information to Tourism and Events NT, the information may be linked to data stored in the cookie. Once users check the cookie consent on the website their information will be collected through the use of cookies.</p>
+<p>As you interact with our website, Tourism and Events NT may use automated technologies or interactions to collect personal data by using cookies or other similar technologies.</p>
 <p>Our website uses persistent cookies and session cookies:</p>
 <ul>
 <li>Persistent cookies remain on your device for the period specified in the cookie. As an example, we use persistent cookies to recognise you each time you visit our website and to remember your preferences.</li>
@@ -684,29 +720,29 @@ To the maximum extent permitted by law, we are not liable for any loss or damage
 <li>Understanding our customers and members (including their online behaviour) that then drives all kinds of data-led usage. This may include sharing and receiving cookies with third parties from time to time.</li>
 </ul>  
 <h2>Use of information</h2>
-<p>Information collected by Tourism NT is only for purposes related to its core functions and activities. Tourism NT’s core function is to market the Northern Territory as a travel destination.</p>
-<p>Tourism NT may use personal information to contact the individual for direct marketing or market research purposes.</p>
-<p>Tourism NT may use personal information to provide direct communication through email, targeted and retargeted advertising, targeted personalised digital content, social media contacts or other means. Tourism NT will use information on internet usage for the purpose of targeting specific content to users for the purpose of marketing the Northern Territory as a travel destination. Where appropriate, Tourism NT will prominently provide a notice in each direct communication specifying how an individual can request to discontinue future direct marketing or market research communications, where a user has not opted out.</p>
-<p>Tourism NT uses personal information for statistical purposes. Where information is used for statistical purposes, all information capable of identifying an individual user will be removed. Statistics compiled from personal information may be made public, however no information enabling identification of any individual will be included in such statistical material.</p>
-<p>Tourism NT uses personal information to learn more about people using its websites and social media. Tourism NT may collect, collate, and analyse this information to better understand and target its users and audience. Tourism NT may use this information to specifically target messages to users.</p>
+<p>Information collected by Tourism and Events NT is only for purposes related to its core functions and activities. Tourism and Events NT’s core function is to market the Northern Territory as a travel destination.</p>
+<p>Tourism and Events NT may use personal information to contact the individual for direct marketing or market research purposes.</p>
+<p>Tourism and Events NT may use personal information to provide direct communication through email, targeted and retargeted advertising, targeted personalised digital content, social media contacts or other means. Tourism and Events NT will use information on internet usage for the purpose of targeting specific content to users for the purpose of marketing the Northern Territory as a travel destination. Where appropriate, Tourism and Events NT will prominently provide a notice in each direct communication specifying how an individual can request to discontinue future direct marketing or market research communications, where a user has not opted out.</p>
+<p>Tourism and Events NT uses personal information for statistical purposes. Where information is used for statistical purposes, all information capable of identifying an individual user will be removed. Statistics compiled from personal information may be made public, however no information enabling identification of any individual will be included in such statistical material.</p>
+<p>Tourism and Events NT uses personal information to learn more about people using its websites and social media. Tourism and Events NT may collect, collate, and analyse this information to better understand and target its users and audience. Tourism and Events NT may use this information to specifically target messages to users.</p>
 <p>IP addresses are used to analyse trends, administer the site, track users’ movement, and gather broad demographic information for aggregate use. IP addresses are not linked to personally identifiable information.</p>
 <p>Personal information data may be shared with:</p>
 <ul>
-<li>Tourism NT commercial and corporate offices;</li>
+<li>Tourism and Events NT commercial and corporate offices;</li>
 <li>Advertisers;</li>
 <li>Travel industry partners such as airlines, online travel agents and booking sites;</li>
 <li>Cooperative marketing partners; and</li>
-<li>Third parties under contract to Tourism NT.</li>
+<li>Third parties under contract to Tourism and Events NT.</li>
 </ul>
-<p>All parties with access to this information will manage it in line with Tourism NT’s policies and applicable laws.</p>
-<p>Tourism NT will not disclose personal information for any reason other than the above situations without consent, unless disclosure is to prevent a threat to life or serious illness, required by law or for investigation proceedings of reasonably suspected unlawful activity.</p>
-<p>If at any point Tourism NT decides to use personally identifiable information in a manner different from that stated at the time it was collected, all affected users will be notified. Users will have a choice as to whether their information is used in this manner.</p>
-<p>Some websites managed by Tourism NT contain links to third party websites. Tourism NT is not responsible for the privacy practices of those linked sites.</p>
-<p>Tourism NT uses Google Analytics. If you would like to know more please visit:</p>
+<p>All parties with access to this information will manage it in line with Tourism and Events NT’s policies and applicable laws.</p>
+<p>Tourism and Events NT will not disclose personal information for any reason other than the above situations without consent, unless disclosure is to prevent a threat to life or serious illness, required by law or for investigation proceedings of reasonably suspected unlawful activity.</p>
+<p>If at any point Tourism and Events NT decides to use personally identifiable information in a manner different from that stated at the time it was collected, all affected users will be notified. Users will have a choice as to whether their information is used in this manner.</p>
+<p>Some websites managed by Tourism and Events NT contain links to third party websites. Tourism and Events NT is not responsible for the privacy practices of those linked sites.</p>
+<p>Tourism and Events NT uses Google Analytics. If you would like to know more please visit:</p>
 <p>Google Analytics: www.google.com/policies/privacy/partners</p>
 <h3>Storage of data &amp; international transfer</h3>
-<p>Tourism NT stores personal information securely both within and outside the Northern Territory.</p>
-<p>For data stored outside the Northern Territory, we use MailChimp and Campaign Monitor, which are both compliant with the UK and EU GDPR through the Standard Contractual Clauses (SCCs) incorporated into our agreement. You can find details of Mailchimp’s commitment at: <a href="https://eepurl.com/dyikdv" target="_blank" rel="noopener" class="trk-conversion-link">Mailchimp and European Data Transfers</a> and Campaign Monitor’s commitment at <a href="https://help.commerce.campaignmonitor.com/s/article/What-you-need-to-know-about-the-Privacy-Shield-program" target="_blank" rel="noopener" class="trk-conversion-link">What you need to know about the Privacy Shield program</a> (campaignmonitor.com). MailChimp and Campaign Monitor are also both compliant with the Californian Consumer Privacy Act (CCPA).</p>
+<p>Tourism and Events NT stores personal information securely both within and outside the Northern Territory.</p>
+<p>For data stored outside the Northern Territory, we use MailChimp and Campaign Monitor, which are both compliant with the UK and EU GDPR through the Standard Contractual Clauses (SCCs) incorporated into our agreement. You can find details of Mailchimp’s commitment at: <a href="https://eepurl.com/dyikdv" target="_blank" rel="noopener">Mailchimp and European Data Transfers</a> and Campaign Monitor’s commitment at <a href="https://help.commerce.campaignmonitor.com/s/article/What-you-need-to-know-about-the-Privacy-Shield-program" target="_blank" rel="noopener">What you need to know about the Privacy Shield program</a> (campaignmonitor.com). MailChimp and Campaign Monitor are also both compliant with the Californian Consumer Privacy Act (CCPA).</p>
 <h2>EU General Data Protection Regulation (GDPR)</h2>
 <p>Under GDPR data protection laws, use of personal information and personal data must be based on one of a number of legal grounds and companies may process personal data only when the processing is permitted by the specific legal ground set out in the law.</p>
 <p>To assist you in understanding the relevant grounds that apply to each purpose of our data processing under GDPR, we have set this out in the table below:</p>
@@ -873,35 +909,34 @@ To the maximum extent permitted by law, we are not liable for any loss or damage
 <p>Our retention periods for personal information are based on business needs and legal requirements. We retain personal information for as long as is necessary for the processing purpose(s) for which the information was collected, and any other permissible, related purpose.</p>
 <p>When personal information is no longer needed (in accordance with the table above), we either securely destroy it, or irreversibly anonymise the data (and we may further retain and use the anonymised information).</p>
 <h2>Managing your account &amp; subscription</h2>
-<p>If you wish to delete your registered account or unsubscribe to Tourism NT communications such as newsletters, publications, and event invitations, you may do so by contacting us at&nbsp;<a href="mailto:marketing.tourismeventsnt@nt.gov.au">marketing.tourismeventsnt@nt.gov.au</a>&nbsp;or by clicking ‘unsubscribe’ at the bottom of an email newsletter.</p>
+<p>If you wish to delete your registered account or unsubscribe to Tourism and Events NT communications such as newsletters, publications, and event invitations, you may do so by contacting us at&nbsp;<a href="mailto:marketing.tourismeventsnt@nt.gov.au">marketing.tourismeventsnt@nt.gov.au</a>&nbsp;or by clicking ‘unsubscribe’ at the bottom of an email newsletter.</p>
 <p>To ensure we have the correct information, please include your registered <strong>email address</strong>, <strong>first name</strong>, <strong>last name</strong>, and requested <strong>change</strong>. For example:</p>
 <p>Email:&nbsp;janedoe@email.com <br>First and last name: Jane Doe <br>Requested change: Please delete my northernterritory.com account.</p>
 <p>We will reply to your email request within 30 business days or within any shorter period as may be required by applicable laws.</p>
 <h2>Opt-out from online targeting &amp; advertising cookies</h2>
-<p>Tourism NT use online tracking and advertising technologies that include Google Adwords, DoubleClick, Adobe, TubeMogul, and Facebook, in activities such as analytics and online behavioural advertising, to provide you with more relevant messages.</p>
+<p>Tourism and Events NT use online tracking and advertising technologies that include Google Adwords, DoubleClick, Adobe, TubeMogul, and Facebook, in activities such as analytics and online behavioural advertising, to provide you with more relevant messages.</p>
 <p>You can find more information on these services and choose to opt-out from the services of your choice one by one by using this website.</p>
 <ul>
-<li><a href="https://www.youronlinechoices.com.au/" target="_blank" rel="noopener" class="trk-conversion-link">www.youronlinechoices.com.au</a>&nbsp;(if you are in Australia)</li>
-<li><a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener" class="trk-conversion-link">www.youronlinechoices.eu</a>&nbsp;(if you are in the EU)</li>
-<li><a href="https://networkadvertising.org/choices" target="_blank" rel="noopener" class="trk-conversion-link">networkadvertising.org/choices</a></li>
+  <li><a href="https://www.youronlinechoices.com.au/" target="_blank" rel="noopener">www.youronlinechoices.com.au</a>&nbsp;(if you are in Australia)</li>
+  <li><a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener">www.youronlinechoices.eu</a>&nbsp;(if you are in the EU)</li>
+  <li><a href="https://networkadvertising.org/choices" target="_blank" rel="noopener">networkadvertising.org/choices</a></li>
 </ul>
 <h3>How to manage your cookies</h3>
 <p>If you disable cookies in your browser, some areas of our website may not function properly or be accessible.</p>
 <p>If you delete your existing cookies:</p>
 <ul>
-<li>We will no longer know that you’ve opted out of online behavioural advertising, so the banners from our third-party advertisers will reappear when you visit other selected websites.</li>
-<li>We will no longer automatically remember some information that you have provided to us (such as your language and country preferences) and you may be asked to provide this information again.</li>
+  <li>We will no longer know that you’ve opted out of online behavioural advertising, so the banners from our third-party advertisers will reappear when you visit other selected websites.</li>
+  <li>We will no longer automatically remember some information that you have provided to us (such as your language and country preferences) and you may be asked to provide this information again.</li>
 </ul>
 <p>Find out how to clear, enable and manage cookies on your preferred browser.</p>
 <ul>
-<li>Chrome – Visit&nbsp;<a href="https://support.google.com/chrome/answer/95647?hl=en" target="_blank" rel="noopener" class="trk-conversion-link">Google Support</a></li>
-<li>Internet Explorer – Visit&nbsp;<a href="https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies#ie=ie-11" target="_blank" rel="noopener" class="trk-conversion-link">Microsoft Support</a></li>
-<li>Firefox – Visit&nbsp;<a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" rel="noopener" class="trk-conversion-link">Mozilla Support</a></li>
-<li>Safari on macOS – Visit&nbsp;<a href="https://support.apple.com/kb/index?q=manage+cookies&amp;src=globalnav_support&amp;type=organic&amp;page=search&amp;locale=en_US" target="_blank" rel="noopener" class="trk-conversion-link">Apple Support</a></li>
-<li>Safari on iOS – Visit&nbsp;<a href="https://support.apple.com/en-us/HT201265" target="_blank" rel="noopener" class="trk-conversion-link">Apple Support</a></li>
+  <li>Chrome – Visit&nbsp;<a href="https://support.google.com/chrome/answer/95647?hl=en" target="_blank" rel="noopener">Google Support</a></li>
+  <li>Internet Explorer – Visit&nbsp;<a href="https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies#ie=ie-11" target="_blank" rel="noopener">Microsoft Support</a></li>
+  <li>Firefox – Visit&nbsp;<a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank" rel="noopener">Mozilla Support</a></li>
+  <li>Safari on macOS – Visit&nbsp;<a href="https://support.apple.com/kb/index?q=manage+cookies&amp;src=globalnav_support&amp;type=organic&amp;page=search&amp;locale=en_US" target="_blank" rel="noopener">Apple Support</a></li>
+  <li>Safari on iOS – Visit&nbsp;<a href="https://support.apple.com/en-us/HT201265" target="_blank" rel="noopener">Apple Support</a></li>
 </ul>
-<h3>What if I don’t want cookies or similar tracking technologies?</h3>  
-<p>If you want to prevent future cookies or adjust your cookie settings, use our <a href="#" target="_self" class="cmp__preference__invoker">cookie consent manager</a>. To remove existing cookies, use your browser options.</p><p><strong>Please note</strong> that deleting and blocking cookies may impact your user experience and limit certain functionalities on our website.</p><h2>Request to delete personal information</h2><p>You may make a written request to delete your personal information provided by you to Tourism NT.</p><p>A written request must be made to the following email address: <a href="mailto:marketing.tourismeventsnt@nt.gov.au" target="_self">marketing.tourismeventsnt@nt.gov.au</a></p><p>Tourism NT will consider each written request on a case by case basis and will provide a written response to each request.</p><p>If you are not satisfied with Tourism NT’s response, you may lodge a complaint with the Office of the Information Commissioner on their website using the following link: <a href="https://infocomm.nt.gov.au/complaints-and-appeals/overview" target="_blank" rel="noopener" class="trk-conversion-link">The Office of the Information Commissioner</a></p>
+
 <small>Parks and Wildlife Commission NT· Terms updated March 2026 · Subject to legal review.</small>
 <button class="dialog__closebutton" commandfor="privacy" command="close" title="Close" aria-label="Close">×</button> 
       </div>
@@ -909,7 +944,7 @@ To the maximum extent permitted by law, we are not liable for any loss or damage
       </dialog>
   <!-- Footer -->
   <footer>
-    <div class="acknowledgement"> Watarrka National Park (Kings Canyon) is a culturally significant area cared for by the Traditional Owners, the Luritja and Pertame people. Please respect the land, stay on marked walking tracks, take rubish with you, and follow all safety signs.</div>
+    <div class="acknowledgement">Watarrka National Park (Kings Canyon) is a culturally significant area cared for by the Traditional Owners, the Luritja and Pertame people. Please respect the land, stay on marked walking tracks, take rubish with you, and follow all safety signs.</div>
     <div class="footer__brand">
       &copy; Parks and Wildlife Commission NT
     </div>
@@ -925,48 +960,10 @@ To the maximum extent permitted by law, we are not liable for any loss or damage
     <div class="success-icon">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
-    <h2>You're connected!</h2>
-    <p>Welcome to Wangi Falls.<br>Enjoy the plunge pools and stay safe &ndash; always check swimming conditions.</p>
+    <h2>You’re connected!</h2>
     <p class="dots">Redirecting<span>.</span><span>.</span><span>.</span><span>.</span></p>
   </dialog>
-    <script src="./src/script.js"></script>
   
-  <!--
-   <script>
-  document.getElementById('termsBox').addEventListener('scroll', function(){
-    document.getElementById('scrollNote').style.opacity = this.scrollTop > 20 ? '0' : '1';
-  });
-  let accepted = false;
-  function toggleAccept(){
-    accepted = !accepted;
-    document.getElementById('acceptRow').classList.toggle('checked', accepted);
-    document.getElementById('btnConnect').disabled = !accepted;
-  }
-  function doConnect(){ if(!accepted) return; 
-    document.getElementById('getonline').close();
-    document.getElementById('successOverlay').classList.add('show'); setTimeout(() => { window.location.href = 'https://northernterritory.com/promotions/wifi/wangi'; }, 3000); }
-  function doGuest(){
-    const o = document.getElementById('successOverlay');
-    o.querySelector('p').textContent = 'Connected with limited access. Accept the Terms of Use for full park services.';
-    o.classList.add('show');
-  }
-</script>
-
-<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
-</script> -->
+    <script src="./src/script.js"></script>
   </body>
 </html>
